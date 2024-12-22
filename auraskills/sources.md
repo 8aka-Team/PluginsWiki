@@ -1,16 +1,17 @@
 ---
-description: Guide to configuring XP sources
+sidebar_position: 7
+description: XP来源配置指南
 ---
 
-# Sources
+# 来源
 
-**Sources** are the gameplay actions that give players XP in a skill. This includes things like mining blocks or killing mobs. Sources for each skill are configured in the `sources` folder, with a different file for each skill. Each source's XP value can be changed, and entirely new sources can be added based on a source type and its options.
+**来源** 是玩家在技能中获得XP的游戏行为。这包括挖掘方块或击杀生物等活动。每个技能的来源都在 `sources` 文件夹中配置，每个技能有不同的文件。每个来源的XP值可以更改，并且可以根据来源类型及其选项添加全新的来源。
 
-## Default section
+## 默认部分
 
-The `default` section is used in a source file to save lines by not having to write out the same options for every source. Each key in the default section is copied to every single source in the `sources` section, unless it is overriden by a key with the same path in the specific source.&#x20;
+`default` 部分用于在来源文件中通过不重复编写相同选项来节省行数。默认部分中的每个键都会复制到 `sources` 部分中的每个来源，除非在特定来源中被具有相同路径的键覆盖。
 
-For example, the consider following source configuration with a default section:
+例如，考虑以下带有默认部分的来源配置：
 
 ```yaml
 default:
@@ -27,267 +28,267 @@ sources:
         type: awkward
 ```
 
-This is the same as the following source configuration without the default section:
+这与以下没有默认部分的来源配置相同：
 
 ```yaml
 sources:
   awkward:
-    type: brewing # Copied from previous default
-    trigger: takeout # Copied from previous default
+    type: brewing # 从之前的默认部分复制
+    trigger: takeout # 从之前的默认部分复制
     ingredient: nether_wart
     xp: 10
-    menu_item: # The menu_item section is combined with the previous default section
-      material: potion # Material from the previous default
-      potion_data: # Defined key from the source itself
+    menu_item: # menu_item 部分与之前的默认部分合并
+      material: potion # 来自之前的默认部分
+      potion_data: # 来源本身定义的键
         type: awkward
 ```
 
-The default section is useful in making the file more concise for skills with sources of mostly one type that also share common options.
+默认部分对于使文件更简洁非常有用，特别是对于大多数来源类型相同且共享常见选项的技能。
 
-## Types
+## 类型
 
-Each source must have a `type` key that defines the type of action the source is. If you see a source that doesn't specify a type, that means it's using the type in the `default` section.&#x20;
+每个来源必须有一个 `type` 键，用于定义来源的行为类型。如果你看到一个没有指定类型的来源，这意味着它使用了 `default` 部分中的类型。
 
-Each source has a name, which is simply the name of the section it is defined in. This name can be used in the [tags](sources.md#tags) section to reference the source. Sources must have unique names within a single skill.
+每个来源都有一个名称，即其在定义时所在的节点的名称。此名称可以在 [tags](sources.md#tags) 部分中用于引用该来源。在单个技能中，来源名称必须是唯一的。
 
 :::info
-Some options have a plural list variant, such as `block` and `blocks`. If the plural key is defined, the singular key should not be used, even if it is listed as required.
+某些选项有复数列表变体，例如 `block` 和 `blocks`。如果定义了复数键，则不应使用单数键，即使它被列为必需项。
 :::
 
-#### Global options
+#### 全局选项
 
-The following is a list of options that apply to all source types:
+以下是适用于所有来源类型的选项列表：
 
-* `xp` - The XP amount to give for the source. This is the base amount and does not include any ability, permission, or item multipliers. (Required)
-* `display_name` - The readable name used in menus to identify the source. Default sources already have display names defined in the messages file at the path `sources.[type].[name]`. Only define a `display_name` on the source if you want to override the messages value or for newly created sources you don't need to be localized.
-* `menu_item` - A section that defines the item used in the sources menu to represent the source. Placeholders to other keys can be used in `material` for example, to only need to define a single menu\_item in the default section. See [#Menu item](sources.md#menu-item) for details.
-  * Oraxen items are support by using a string key prefixed with `oraxen:`. For example, `menu_item: oraxen:mythril` will use the exact item defined in Oraxen, including any NBT. This is defined as a string value directly on the `menu_item` key rather than the map section used for normal menu items.
-* `unit` - A placeholder that defines the name of the unit for some sources whose XP amount is dynamic, such as Defense XP per damage or Forging XP per anvil cost experience. This is needed for some units to function when giving XP. See the section for the specific type for valid values.
-* `income_per_xp` - Gives money based on the value times the XP gained. Only works if jobs are enabled in the [Main Config](main-config/#jobs). This works the same as the income\_per\_xp in the main config, but overrides it for the specific source. Mutually exclusive with income and income\_expression.
-* `income` - Gives a fixed decimal money amount when the source is gained. Only works if jobs are enabled. Mutually exclusive with income\_per\_xp and income\_expression.
-* `income_expression` - An expression to calculate the income, works the same as the jobs.income.default.expression in the [Main Config](main-config/#jobs). Only works if jobs are enabled. Mutually exclusive with income\_per\_xp and income.
+* `xp` - 来源给予的XP数量。这是基础数量，不包括任何能力、权限或物品乘数。（必需）
+* `display_name` - 在菜单中用于标识来源的可读名称。默认来源已经在消息文件中的路径 `sources.[type].[name]` 定义了显示名称。仅在需要覆盖消息值或为新创建的无需本地化的来源定义 `display_name` 时才定义此项。
+* `menu_item` - 定义在来源菜单中用于表示来源的物品的部分。可以在 `material` 中使用占位符到其他键，例如，只需在默认部分中定义一个 menu\_item。详见 [#Menu item](sources.md#menu-item)。
+  * Oraxen 物品通过使用以 `oraxen:` 为前缀的字符串键来支持。例如，`menu_item: oraxen:mythril` 将使用 Oraxen 中定义的确切物品，包括任何 NBT。这直接在 `menu_item` 键上定义为字符串值，而不是用于正常菜单物品的映射部分。
+* `unit` - 定义某些来源的单位名称的占位符，这些来源的XP数量是动态的，例如每点伤害的防御XP或每个铁砧成本经验的锻造XP。这对于在给予XP时某些单位正常工作是必需的。详见特定类型的部分以获取有效值。
+* `income_per_xp` - 根据值乘以获得的XP给予金钱。仅在 [Main Config](main-config/#jobs) 中启用了 jobs 时有效。这与主配置中的 income\_per\_xp 工作方式相同，但覆盖了特定来源的值。与 income 和 income\_expression 互斥。
+* `income` - 当获得来源时给予固定的小数金钱金额。仅在启用了 jobs 时有效。与 income\_per\_xp 和 income\_expression 互斥。
+* `income_expression` - 用于计算收入的表达式，工作方式与 [Main Config](main-config/#jobs) 中的 jobs.income.default.expression 相同。仅在启用了 jobs 时有效。与 income\_per\_xp 和 income 互斥。
 
-### Anvil
+### 铁砧
 
-The anvil source (`type: anvil`) gives XP when combining items in an anvil.
+铁砧来源（`type: anvil`）在铁砧中合并物品时给予XP。
 
-#### Options
+#### 选项
 
-* `left_item` - An [item filter](sources.md#item-filter) defining valid items in in the left slot. (Required)
-* `right_item` - An item filter defining valid items in the right slot. (Required)
-* `multiplier` - A placeholder for multiplying the base XP. Currently must be the value `'{repair_cost}'`, which is the amount of experience levels used in the anvil.
+* `left_item` - 定义左槽中有效物品的 [物品过滤器](sources.md#item-filter)。（必需）
+* `right_item` - 定义右槽中有效物品的物品过滤器。（必需）
+* `multiplier` - 用于乘以基础XP的占位符。目前必须是值 `'{repair_cost}'`，即在铁砧中使用经验等级。
 
-### Block
+### 方块
 
-The block source (`type: block`) gives XP for breaking or interacting with blocks. The options can be used to define complex sources involving multiple blocks or specific block states.
+方块来源（`type: block`）在破坏或与方块交互时给予XP。可以使用选项定义涉及多个方块或特定方块状态的复杂来源。
 
-#### Options
+#### 选项
 
-* `block` - The block type/material. This must be a valid Bukkit [Material](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) in all lowercase. (Required)
-  * Oraxen custom blocks are supported by prefixing the block name with `oraxen:`. For example, `block: oraxen:mythril_ore` will automatically register the block state from Oraxen without neeeding to manually define a `state`.
-* `blocks` - A list of multiple block types used to group multiple blocks to the same source. Overrides `block`.
-* `trigger` - The type of action on the block. Can be either `break` or `interact`. `break` is simply when a block is broken by a player with left click. `interact` is when the block is right clicked. (Required)
-* `triggers` - A list of multiple triggers.
-* `check_replace` - Whether player-placed blocks should not give XP. If true, placed blocks will not give XP. If false, any block that matches the source will give XP. Defaults to true.
-* `state` - A section of keys that defines the specific block state the block must match.
-* `states` - A list of block state sections to match any of the block states in the list.
-* `after_state` - A block state that is checked to match one tick after the block is interacted with. If the block does not match the after\_state, XP will not be given. Only works if `trigger` is set to `interact`.
-* `after_states` - A list of block states to check on tick after. XP is given if the block still matches any states in the list.
-* `state_multiplier` - An expression with block state variables that evaluates to a number to multiply the base `xp` given.
-* `support_block` - A direction defined for some blocks that will automatically break if an adjacent block is broken. Valid values are `above`, `below`, `side`, and `none`. This ensures that the block can be unmarked as a player placed block when it is indirectly broken. Defaults to `none`.
-* `trunk` - Whether the block is a tree trunk. Used by Treecapitator for checking valid blocks to break. Defaults to false.
-* `leaf` - Whether the block is a leaf block. Used by Treecapitator for checking valid blocks to break. Defaults to false.
+* `block` - 方块类型/材料。这必须是有效的 Bukkit [Material](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html)，全部小写。（必需）
+  * Oraxen 自定义方块通过在方块名称前加上 `oraxen:` 来支持。例如，`block: oraxen:mythril_ore` 将自动从 Oraxen 注册方块状态，无需手动定义 `state`。
+* `blocks` - 用于将多个方块分组到同一来源的多个方块类型的列表。覆盖 `block`。
+* `trigger` - 方块上的行为类型。可以是 `break` 或 `interact`。`break` 是玩家用左键破坏方块时。`interact` 是右键点击方块时。（必需）
+* `triggers` - 多个触发器的列表。
+* `check_replace` - 玩家放置的方块是否不应给予XP。如果为 true，放置的方块将不给予XP。如果为 false，任何匹配来源的方块都将给予XP。默认为 true。
+* `state` - 定义方块必须匹配的特定方块状态的键的部分。
+* `states` - 用于匹配列表中任何方块状态的方块状态部分的列表。
+* `after_state` - 在与方块交互后一tick检查的方块状态。如果方块不匹配 after\_state，则不给予XP。仅在 `trigger` 设置为 `interact` 时有效。
+* `after_states` - 用于在一tick后检查的方块状态列表。如果方块仍然匹配列表中的任何状态，则给予XP。
+* `state_multiplier` - 包含方块状态变量的表达式，计算结果为乘以基础 `xp` 的数字。
+* `support_block` - 为某些方块定义的方向，如果相邻方块被破坏，则会自动破坏。有效值为 `above`、`below`、`side` 和 `none`。这确保了当方块间接被破坏时，可以将其标记为玩家放置的方块。默认为 `none`。
+* `trunk` - 方块是否为树干。由 Treecapitator 用于检查有效方块以破坏。默认为 false。
+* `leaf` - 方块是否为树叶方块。由 Treecapitator 用于检查有效方块以破坏。默认为 false。
 
-### Brewing
+### 酿造
 
-The brewing source (`type: brewing`) gives XP when brewing potions in a brewing stand.&#x20;
+酿造来源（`type: brewing`）在酿造台中酿造药水时给予XP。
 
-#### Options
+#### 选项
 
-* `ingredient` - An item filter defining valid potion ingredients
-* `trigger` - When to give XP, either on `brew` or `takeout`. Using `brew` means that auto-brewers will still give XP to the player who placed the brewing stand.
+* `ingredient` - 定义有效药水成分的物品过滤器
+* `trigger` - 何时给予XP，可以是 `brew` 或 `takeout`。使用 `brew` 意味着自动酿造器仍会将XP给予放置酿造台的玩家。
 
-### Damage
+### 伤害
 
-The damage source (`type: damage`) gives XP when the player takes damage. In the default sources, this handles both the Defense sources and fall damage in Agility. The resulting XP given is the `xp` key multiplied by the amount of damage taken.
+伤害源（`type: damage`）在玩家受到伤害时给予经验值。在默认的源中，这处理了防御源和敏捷中的坠落伤害。给予的经验值是`xp`键乘以受到的伤害量。
 
-#### Options
+#### 选项
 
-* `cause` - The cause of the damage that is required for the source. Must be a valid Bukkit [DamageCause](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityDamageEvent.DamageCause.html) in all lowercase.
-* `causes` - A list of multiple damage causes.
-* `excluded_cause` - A cause that is excluded for the source. If no `cause`/`causes` is specified, any cause other than the `excluded_cause` will work.
-* `excluded_causes` - A list of multiple excluded damage causes.
-* `damager` - A specific entity type that the player must be damaged from. Can be either `mob`, `player`, or any Bukkit [EntityType](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html) in all lowercase. Specifying a damager automatically excludes the source from non-entity damage, like fall damage.
-* `damagers` - A list of multiple valid entity types.
-* `excluded_damager` - A specific entity type that is excluded from giving XP for the source.
-* `excluded_damagers` - A list of entities types excluded from giving XP.
-* `must_survive` - Whether the player must survive the damage taken in order to gain XP. Defaults to true.
-* `use_original_damage` - Whether the XP given should be multiplied by the original damage dealt without any damage reduction modifiers (armor, stats, abilties, etc). Defaults to true.
-* `cooldown_ms` - A delay before XP can be gained again in milliseconds (200 by default).
+* `cause` - 伤害的原因，必须是一个有效的Bukkit [DamageCause](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityDamageEvent.DamageCause.html)，全部小写。
+* `causes` - 多个伤害原因的列表。
+* `excluded_cause` - 被排除的原因。如果没有指定`cause`/`causes`，则除了`excluded_cause`之外的任何原因都有效。
+* `excluded_causes` - 多个被排除的伤害原因的列表。
+* `damager` - 玩家必须受到伤害的特定实体类型。可以是`mob`、`player`或任何Bukkit [EntityType](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html)，全部小写。指定damager会自动排除非实体伤害，如坠落伤害。
+* `damagers` - 多个有效的实体类型的列表。
+* `excluded_damager` - 被排除的特定实体类型，不会给予经验值。
+* `excluded_damagers` - 被排除的多个实体类型的列表。
+* `must_survive` - 玩家是否必须存活下来才能获得经验值。默认为true。
+* `use_original_damage` - 给予的经验值是否应乘以原始伤害，不考虑任何伤害减少的修正（如护甲、属性、能力等）。默认为true。
+* `cooldown_ms` - 再次获得经验值前的延迟时间，单位为毫秒（默认200）。
 
-### Enchanting
+### 附魔
 
-The enchanting source (`type: enchanting`) gives XP when enchanting an item in an enchanting table.
+附魔源（`type: enchanting`）在玩家在附魔台附魔物品时给予经验值。
 
-#### Options
+#### 选项
 
-* `item` - An item filter defining the valid items to enchant. (Required)
-* `unit` - The unit to use to multiply XP. Currently must be `'{sources.units.enchant_level}'`
+* `item` - 定义可附魔物品的物品过滤器。（必需）
+* `unit` - 用于乘以经验值的单位。目前必须是`'{sources.units.enchant_level}'`。
 
-### Entity
+### 实体
 
-The entity source (`type: entity`) gives XP for a player killing or damaging an entity.
+实体源（`type: entity`）在玩家杀死或伤害实体时给予经验值。
 
-#### Options
+#### 选项
 
-* `entity` - A valid Bukkit [EntityType](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html) that specifies the type of entity the player kills/damages. (Required)
-* `trigger` - The trigger for when to given XP, either on entity `death` or `damage`. (Required)
-* `triggers` - A list of multiple triggers.
-* `damager` - A damager to match when giving XP, which can either be `player`, `projectile`, or `thrown_potion`.
-* `damagers` - A list of multiple valid damagers.
-* `scale_xp_with_health` - If the `trigger` is damage, the damage XP multiplier will be scaled by the damaged mob's max health. The total XP gained from killing a mob will be consistent between death and damage triggers. Defaults to true.
-* `cause` - The cause of the damage that is required for the source. Must be a valid Bukkit [DamageCause](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityDamageEvent.DamageCause.html) in all lowercase.
-* `causes` - A list of multiple damage causes.
-* `excluded_cause` - A cause that is excluded for the source. If no `cause`/`causes` is specified, any cause other than the `excluded_cause` will work.
-* `excluded_causes` - A list of multiple excluded damage causes.
+* `entity` - 玩家杀死/伤害的实体类型，必须是有效的Bukkit [EntityType](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html)。（必需）
+* `trigger` - 给予经验值的触发条件，可以是实体`death`或`damage`。（必需）
+* `triggers` - 多个触发条件的列表。
+* `damager` - 给予经验值时匹配的damager，可以是`player`、`projectile`或`thrown_potion`。
+* `damagers` - 多个有效的damagers的列表。
+* `scale_xp_with_health` - 如果`trigger`是damage，伤害经验值乘数将根据被伤害生物的最大生命值进行缩放。杀死生物获得的总经验值在death和damage触发条件下将保持一致。默认为true。
+* `cause` - 伤害的原因，必须是一个有效的Bukkit [DamageCause](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/entity/EntityDamageEvent.DamageCause.html)，全部小写。
+* `causes` - 多个伤害原因的列表。
+* `excluded_cause` - 被排除的原因。如果没有指定`cause`/`causes`，则除了`excluded_cause`之外的任何原因都有效。
+* `excluded_causes` - 多个被排除的伤害原因的列表。
 
-### Fishing
+### 钓鱼
 
-The fishing source (`type: fishing`) is used for players fishing.
+钓鱼源（`type: fishing`）用于玩家钓鱼。
 
-#### Options
+#### 选项
 
-* `item` - An item filter defining the item the player fishes up.
+* `item` - 定义玩家钓上来的物品的物品过滤器。
 
-### Grindstone
+### 砂轮
 
-The grindstone source (`type: grindstone`) gives XP for disenchanting items in a grindstone.
+砂轮源（`type: grindstone`）在玩家在砂轮上拆解物品时给予经验值。
 
-#### Options
+#### 选项
 
-* `multiplier` - A placeholder to multiply the base `xp` by when giving XP. Currently can only be `'{total_level}'`, which is the sum of the enchantment levels of all the enchants removed by the grindstone.
+* `multiplier` - 给予经验值时乘以基础`xp`的占位符。目前只能是`'{total_level}'`，即砂轮移除的所有附魔的附魔等级之和。
 
-### Item consume
+### 物品消耗
 
-The item consume source (`type: item_consume`) gives XP when players consume a potion or eat an item.
+物品消耗源（`type: item_consume`）在玩家消耗药水或食用物品时给予经验值。
 
-#### Options
+#### 选项
 
-* `item` - An item filter defining the item that is consumed. (Required)
+* `item` - 定义被消耗物品的物品过滤器。（必需）
 
-### Jumping
+### 跳跃
 
-The jumping source (`type: jumping`) gives XP for the player jumping.
+跳跃源（`type: jumping`）在玩家跳跃时给予经验值。
 
-#### Options
+#### 选项
 
-* `interval` - The number of jumps required to give XP. The XP given per jump is `xp/interval`. Defaults to 100.
+* `interval` - 给予经验值所需的跳跃次数。每次跳跃给予的经验值是`xp/interval`。默认为100。
 
-### Mana ability use
+### 法力技能使用
 
-The mana ability use source (`type: mana_ability_use`) gives XP when the player uses a mana ability. The amount of XP given is the `xp` multiplied by the amount of mana consumed.
+法力技能使用源（`type: mana_ability_use`）在玩家使用法力技能时给予经验值。给予的经验值是`xp`乘以消耗的法力值。
 
-#### Options
+#### 选项
 
-* `mana_ability` - The name of a specific mana ability to only give XP for when used.
-* `mana_abilities` - A list of mana abilities to only give XP for using.
+* `mana_ability` - 仅在使用特定法力技能时给予经验值的法力技能名称。
+* `mana_abilities` - 仅在使用特定法力技能时给予经验值的法力技能列表。
 
-### Potion splash
+### 药水投掷
 
-The potion splash source (`type: potion_splash`) gives XP when a player uses a splash or lingering potion.
+药水投掷源（`type: potion_splash`）在玩家使用投掷或滞留药水时给予经验值。
 
-#### Options
+#### 选项
 
-* `item` - An item filter defining the type of potion splashed. (Required)
+* `item` - 定义被投掷药水类型的物品过滤器。（必需）
 
-### Statistic
+### 统计
 
-The statistic source (`type: statistic`) gives XP when a Minecraft player statistic increases. XP is given at a fixed interval controlled by the `xp_gain_period` option under Endurance in `skills.yml`. The default period is every 5 minutes. For the source to work, `stats.disable-saving` in the server's `spigot.yml` must be false (it's false by default, so only check if you changed it).
+统计源（`type: statistic`）在Minecraft玩家统计增加时给予经验值。经验值的给予由`skills.yml`中Endurance下的`xp_gain_period`选项控制的固定间隔时间。默认间隔是每5分钟。要使源工作，服务器的`spigot.yml`中的`stats.disable-saving`必须为false（默认情况下为false，因此只有在更改后才需要检查）。
 
-#### Options
+#### 选项
 
-* `statistic` - The name of the statistic to track increases and give XP for. Must be a valid Bukkit [Statistic](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Statistic.html) in all lowercase. (Required)
-* `multiplier` - An flat amount to multiply the XP gained by. (Defaults to 1)
-* `minimum_increase` - The minimum amount the statistic has to increase by within the check period in order for XP to be given. If the amount gained is less than the minimum, it will still be added towards the next time the amount is checked. (Defaults to 1)
+* `statistic` - 跟踪增加并给予经验值的统计名称。必须是有效的Bukkit [Statistic](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Statistic.html)，全部小写。（必需）
+* `multiplier` - 乘以获得的经验值的固定量。（默认为1）
+* `minimum_increase` - 统计在检查期间必须增加的最小量，以便给予经验值。如果获得的量小于最小值，它仍将计入下一次检查的量。（默认为1）
 
-## Item filter
+## 物品过滤器
 
-Multiple sources that have an `item`, `ingredient`, or similar options use the item filter format, which  defines a filter the item used in the source type generally has to pass in order to be matched to the specific source. This allows specifying only one specific item with an exact material and meta, or more general filters allowing multiple materials.
+多个源具有`item`、`ingredient`或类似选项，使用物品过滤器格式，该格式定义了物品在源类型中必须通过的过滤器，以便与特定源匹配。这允许指定具有精确材料和元数据的单个特定物品，或允许多个材料的更一般过滤器。
 
-### General options
+### 通用选项
 
-* `material` - A single specific material the item must be. This should be a valid Bukkit [Material](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html) in all lowercase.
-* `materials` - A list of multiple materials the filter can match.
-* `excluded_material` - A single material to exclude from being matched.
-* `excluded_materials` - A list of multiple materials to exclude from being matched.
-* `category` - A category name to match all items from. Valid values are `weapon`, `armor`, `tool`, `fishing_junk`, and `fishing_treasure`.
+* `material` - 物品必须是的单一特定材料。这应该是有效的Bukkit [Material](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html)，全部小写。
+* `materials` - 过滤器可以匹配的多个材料的列表。
+* `excluded_material` - 排除的单一材料。
+* `excluded_materials` - 排除的多个材料的列表。
+* `category` - 匹配所有物品的类别名称。有效值为`weapon`、`armor`、`tool`、`fishing_junk`和`fishing_treasure`。
 
-### Direct value
+### 直接值
 
-In cases where you only need a single material in the filter, you can directly specify the material name as a value, instead of in the subsection.
+在只需要过滤器中的单一材料的情况下，可以直接指定材料名称作为值，而不是在子部分中。
 
-For example:
+例如：
 
 ```yaml
 ingredient: nether_wart
 ```
 
-is equivalent to
+等同于
 
 ```yaml
 ingredient:
   material: nether_wart
 ```
 
-### Meta options
+### 元数据选项
 
-Further options can be used to narrow down the item more specifically than just the material. These options are placed in the same indentation level as the general options (one level to the right of the section name like `item` or `ingredient`).
+进一步的选项可以用于更具体地缩小物品的范围，而不仅仅是材料。这些选项与通用选项放在相同的缩进级别（在`item`或`ingredient`等部分名称的右侧一个级别）。
 
-* `display_name` - A string display name that must exactly match with the item.
-* `lore` - A list of strings defining the lore that must exactly match with the item.
-* `potion_data` - A section containing options specifying the type of potion to match.
-  * `type` - A valid Bukkit [PotionType](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/potion/PotionType.html) to match in all lowercase.
-  * `types` - A list of multiple types of potions to match.
-  * `excluded_type` - A PotionType to exclude from matching.
-  * `excluded_types` - A list of multiple types of potions to exclude from matching.
-  * `extended` - Whether the potion must have an extended duration.
-  * `upgraded` - Whether the potion must have an upgraded level.
-* `custom_model_data` - An integer to match the CustomModelData id of an item. Both the material and custom\_model\_data must match to pass the filter.
+* `display_name` - 必须与物品完全匹配的字符串显示名称。
+* `lore` - 定义必须与物品完全匹配的lore的字符串列表。
+* `potion_data` - 包含指定要匹配的药水类型的选项的部分。
+  * `type` - 要匹配的有效Bukkit [PotionType](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/potion/PotionType.html)，全部小写。
+  * `types` - 要匹配的多个药水类型的列表。
+  * `excluded_type` - 排除的PotionType。
+  * `excluded_types` - 排除的多个药水类型的列表。
+  * `extended` - 药水是否必须具有延长持续时间。
+  * `upgraded` - 药水是否必须具有升级等级。
+* `custom_model_data` - 匹配物品的CustomModelData id的整数。材料和custom_model_data都必须匹配才能通过过滤器。
 
-### Examples
+### 示例
 
-Example of an item filter used in an item\_consume source:
+以下是一个在 `item_consume` 源中使用的物品过滤器示例：
 
 ```yaml
 drink_regular:
   type: item_consume
-  item: # The item filter section name
-    material: potion # The item consumed must be a potion
+  item: # 物品过滤器部分名称
+    material: potion # 消耗的物品必须是药水
     potion_data:
-      # The type of potion cannot be mundane, thick, awkward, or a water bottle
+      # 药水的类型不能是平凡、浓稠、笨拙或水瓶
       excluded_types: [ mundane, thick, water, awkward ]
-      extended: false # The potion cannot be extended
-      upgraded: false # The potion cannot be upgraded
+      extended: false # 药水不能是延长的
+      upgraded: false # 药水不能是升级的
   xp: 20
 ```
 
-Example of an item filter used in a brewing source:
+以下是一个在 `brewing` 源中使用的物品过滤器示例：
 
 ```yaml
 regular:
   type: brewing
   trigger: takeout
-  ingredient: # The item filter section name
-    # The ingredient cannot be any of these materials
+  ingredient: # 物品过滤器部分名称
+    # 原料不能是以下任何材料
     excluded_materials: [ redstone, glowstone_dust, nether_wart, gunpowder, dragon_breath ]
   xp: 15
 ```
 
-## Menu item
+## 菜单项
 
-As mentioned above, the `menu_item` option is a section that defines the item used in the sources menu to represent the source. The format for this section is explained in the [Slate Items page](https://app.gitbook.com/s/20NRRZnH0xxoDaR57bRl/items).
+如上所述，`menu_item` 选项是一个定义在源菜单中用于表示源的物品的部分。该部分的格式在 [Slate Items 页面](https://app.gitbook.com/s/20NRRZnH0xxoDaR57bRl/items) 中有详细解释。
 
-Built-in placeholders can be used to reference other keys inside the menu\_item.
+内置占位符可以用于引用 `menu_item` 中的其他键。
 
 ```yaml
 default:
@@ -297,19 +298,19 @@ default:
     material: '{block}'
 ```
 
-The above example default section for a block source will replace the `{block}` placeholder with the value of `block` for each source below. So if the dirt source has `block: dirt`, the resulting menu item material will be `material: 'dirt'`.
+上面的示例为块源的默认部分将用每个源的 `block` 值替换 `{block}` 占位符。因此，如果泥土源有 `block: dirt`，则生成的菜单项材料将是 `material: 'dirt'`。
 
-## Tags
+## 标签
 
-The `tags` section of a source file is used to configure plugin-provided list of sources for certain abilities or mechanics. You cannot add or remove tags from the section, only modify the list of the provided tags.
+源文件中的 `tags` 部分用于配置插件提供的某些能力或机制的源列表。你不能从该部分添加或删除标签，只能修改提供的标签列表。
 
-For example, the `farming_luck_applicable` tag is the list of sources that will apply the double drop bonus of the Farming Luck trait.
+例如，`farming_luck_applicable` 标签是应用 Farming Luck 特性双倍掉落加成的源列表。
 
-### Wildcards and exclusions
+### 通配符和排除
 
-By default you might not see the names of sources in the list, since many just the symbol `*` on the list. This adds all the sources in the skill to the tag.
+默认情况下，你可能看不到列表中的源名称，因为许多列表中只有一个符号 `*`。这会将技能中的所有源添加到标签中。
 
-If you want to exclude a source from the list that already has a wildcard without addding every single other source, you can prefix the source name with `!` to exclude it.
+如果你想从已经包含通配符的列表中排除一个源而不添加每个其他源，可以在源名称前加上 `!` 来排除它。
 
 ```yaml
 tags:
@@ -318,7 +319,7 @@ tags:
     - '!sugar_cane'
 ```
 
-In the example above, all farming sources except sugar cane will apply to Farming Luck.
+在上面的示例中，除甘蔗外的所有耕作源都将应用于 Farming Luck。
 
 ```yaml
 tags:
@@ -329,4 +330,4 @@ tags:
     - beetroot
 ```
 
-This example shows making Farming Luck only applicable to wheat, potato, carrot, and beetroot. Note that the names used in the list are the source names (section names under `sources`), not the value of `block` within the source.
+此示例显示了使 Farming Luck 仅适用于小麦、土豆、胡萝卜和甜菜根。请注意，列表中使用的名称是源名称（`sources` 下的部分名称），而不是源中的 `block` 值。

@@ -1,46 +1,47 @@
 ---
-description: Guide to stat modifiers
+sidebar_position: 1
+description: 状态修正指南
 ---
 
-# Stat Modifiers
+# 状态修正
 
-**Modifiers** are temporary [stat](./) buffs on a player. They come in 3 different types and are interacted with primarily using commands. Regular modifiers are attached to a name and are always active unless removed. Item modifiers apply when holding an item. Armor modifiers apply when wearing armor.
+**修正**是玩家身上的临时[状态](./)增益。它们分为三种不同类型，主要通过命令进行交互。常规修正附带一个名称，除非被移除，否则始终处于激活状态。物品修正在持有物品时生效。护甲修正在穿戴护甲时生效。
 
-## Regular Modifiers
+## 常规修正
 
-Regular modifiers are the simplest type of modifier. You add and remove them using commands. Each modifier has 3 properties, a `name`, `stat`, and `value`.
+常规修正是最简单的修正类型。您可以使用命令添加和移除它们。每个修正有三个属性：`名称`、`状态`和`值`。
 
-The `name` is used to identify the modifier. You **cannot** have more than one modifier with the same name on a single player.
+`名称`用于识别修正。您**不能**在单个玩家身上拥有多个相同名称的修正。
 
-The `stat` property is which stat the modifier should be applied on. You must use the official stat names, which are `health`, `strength`, `regeneration`, `luck`, `wisdom`, and `toughness`.
+`状态`属性是指修正应应用的状态。您必须使用官方的状态名称，即`生命值`、`力量`、`再生`、`幸运`、`智慧`和`韧性`。
 
-The `value` property is how much the stat should increase/decrease. For example, a `value` of `50` would add 50 levels to whatever stat it was applied on. Negative values subtract levels.
+`值`属性是状态应增加/减少的量。例如，`值`为`50`将在应用的状态上增加50级。负值则减少等级。
 
-The commands used to interact with them are:
+用于与它们交互的命令有：
 
-* `/sk modifier add [player] [stat] [name] [value] (silent)` - Adds a stat modifier to a player
-* `/sk modifier remove [player] [name] (silent)` - Removes a specific stat modifier from a player
-* `/sk modifier list (player) (stat)` - Lists all or a specific stat's modifiers for a player
-* `/sk modifier removeall (player) (stat) (silent)` - Removes all stat modifiers from a player
+* `/sk modifier add [玩家] [状态] [名称] [值] (静默)` - 向玩家添加状态修正
+* `/sk modifier remove [玩家] [名称] (静默)` - 从玩家移除特定的状态修正
+* `/sk modifier list (玩家) (状态)` - 列出玩家的所有或特定状态的修正
+* `/sk modifier removeall (玩家) (状态) (静默)` - 从玩家移除所有状态修正
 
-## Item Modifiers
+## 物品修正
 
-Item modifiers are like regular modifiers but stored on items. The modifier will only be applied when the player is **holding** the item. The commands will by default apply lore displaying the modifier's stat and value. The item modifier itself is independent of lore and is stored as custom NBT data. Therefore, you can modify lore however you want and it will still work. You can add multiple modifiers, but you can only have 1 modifier of each stat type.
+物品修正类似于常规修正，但存储在物品上。修正仅在玩家**持有**物品时生效。命令默认会应用显示修正状态和值的lore。物品修正本身与lore无关，并以自定义NBT数据存储。因此，您可以随意修改lore，它仍然会起作用。您可以添加多个修正，但每个状态类型只能有一个修正。
 
-The commands used to interact with them are:
+用于与它们交互的命令有：
 
-* `/sk item modifier add [stat] [value] (lore)` - Adds an item stat modifier to the item held, along with lore by default
-* `/sk item modifier remove [stat] (lore)` - Removes an item stat modifier from the item held, and the lore associated with it by default
-* `/sk item modifier list` - Lists all item stat modifiers on the item held
-* `/sk item modifier removeall` - Removes all item stat modifiers from the item held
+* `/sk item modifier add [状态] [值] (lore)` - 向持有的物品添加物品状态修正，默认附带lore
+* `/sk item modifier remove [状态] (lore)` - 从持有的物品移除物品状态修正，默认移除相关lore
+* `/sk item modifier list` - 列出持有的物品上的所有物品状态修正
+* `/sk item modifier removeall` - 从持有的物品移除所有物品状态修正
 
-## Armor Modifiers
+## 护甲修正
 
-Armor modifiers are exactly like item modifiers, except they only apply when the player is **wearing** the item as armor. You can have both item and armor modifiers on the same item and can have an item with an item and armor modifier of the same stat.
+护甲修正与物品修正完全相同，只是它们仅在玩家**穿戴**物品作为护甲时生效。您可以在同一物品上同时拥有物品和护甲修正，并且可以拥有具有相同状态的物品和护甲修正的物品。
 
-The commands used to interact with them are:
+用于与它们交互的命令有：
 
-* `/sk armor modifier add [stat] [value] (lore)` - Adds an armor stat modifier to the item held, along with lore by default
-* `/sk armor modifier remove [stat] (lore)` - Removes an armor stat modifier from the item held, and the lore associated with it by default
-* `/sk armor modifier list` - Lists all item armor modifiers on the item held
-* `/sk armor modifier removeall` - Removes all armor stat modifiers from the item held
+* `/sk armor modifier add [状态] [值] (lore)` - 向持有的物品添加护甲状态修正，默认附带lore
+* `/sk armor modifier remove [状态] (lore)` - 从持有的物品移除护甲状态修正，默认移除相关lore
+* `/sk armor modifier list` - 列出持有的物品上的所有护甲状态修正
+* `/sk armor modifier removeall` - 从持有的物品移除所有护甲状态修正
