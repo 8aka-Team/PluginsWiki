@@ -85,9 +85,9 @@ const config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'auraskills',
-        path: 'auraskills',
-        routeBasePath: 'AuraSkills',
+        id: 'znpcs',
+        path: 'zNPCs',
+        routeBasePath: 'zNPCs',
         editUrl: 'https://github.com/8aka-Team/PluginsWiki/tree/main',
         sidebarPath: require.resolve('./sidebars.js'),
         editCurrentVersion: true,
@@ -171,8 +171,8 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'AuraSkills',
-            docsPluginId: 'auraskills'
+            label: 'zNPCs',
+            docsPluginId: 'znpcs'
           },
           // 搜索框
           // {
