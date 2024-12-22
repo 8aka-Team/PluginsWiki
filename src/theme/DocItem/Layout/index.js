@@ -72,7 +72,7 @@ export default function DocItemLayout({children}) {
           </article>
           <DocItemPaginator />
         </div>
-        {!hideComment && <Comment />}
+        {/*{!hideComment && <Comment />}*/}
       </div>
       {docTOC.desktop && <div className="col col--3">{docTOC.desktop}</div>}
       <FloatButton.Group shape="circle" style={{right: 24}} className="article-float-buttons">

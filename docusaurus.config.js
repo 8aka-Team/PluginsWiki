@@ -50,9 +50,9 @@ const config = {
     defaultLocale: 'zh-Hans',
     locales: ['zh-Hans'],
   },
-  clientModules: [
-      require.resolve('./src/clientModules/routeModules.js')
-  ],
+  // clientModules: [
+  //     require.resolve('./src/clientModules/routeModules.js')
+  // ],
 
   presets: [
     [
@@ -87,7 +87,7 @@ const config = {
       {
         id: 'auraskills',
         path: 'auraskills',
-        routeBasePath: 'auraskills',
+        routeBasePath: 'AuraSkills',
         editUrl: 'https://github.com/8aka-Team/PluginsWiki/tree/main',
         sidebarPath: require.resolve('./sidebars.js'),
         editCurrentVersion: true,
