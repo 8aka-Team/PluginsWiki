@@ -10,9 +10,20 @@ sidebar_position: 1
 
 ## 开始你的旅程
 
-![:NitWikit](https://count.kjchmc.cn/get/@:PluginWiki)
+![:PluginsWiki](https://count.kjchmc.cn/get/@:PluginWiki)
 
 如果你确定你符合条件，请点击一侧的目录开始阅读文档。
+
+## 路线图
+
+正在翻译:
+
+* **AuraSkills**
+
+即将翻译
+
+* CoreProtect
+* AuraMobs
 
 ## 更多
 
