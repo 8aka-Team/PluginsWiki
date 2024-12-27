@@ -162,12 +162,6 @@ const config = {
         hideOnScroll: true,
         items: [
           {
-            type: 'doc',
-            docId: 'zNPCs.md',
-            position: 'left',
-            label: '简介',
-          },
-          {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
