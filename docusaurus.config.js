@@ -85,21 +85,9 @@ const config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'znpcs',
-        path: 'zNPCs',
-        routeBasePath: 'zNPCs',
-        editUrl: 'https://github.com/8aka-Team/PluginsWiki/tree/main',
-        sidebarPath: require.resolve('./sidebars.js'),
-        editCurrentVersion: true,
-        showLastUpdateAuthor: true,
-        showLastUpdateTime: true,
-      }],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'PhantomWorlds',
-        path: 'PhantomWorlds',
-        routeBasePath: 'PhantomWorlds',
+        id: 'shortdoc',
+        path: 'shortdoc',
+        routeBasePath: 'ShortDoc',
         editUrl: 'https://github.com/8aka-Team/PluginsWiki/tree/main',
         sidebarPath: require.resolve('./sidebars.js'),
         editCurrentVersion: true,
@@ -175,7 +163,7 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'zNPCs.md',
             position: 'left',
             label: '简介',
           },
@@ -183,15 +171,8 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'zNPCs',
-            docsPluginId: 'znpcs'
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'PhantomWorlds',
-            docsPluginId: 'PhantomWorlds'
+            label: '短文档',
+            docsPluginId: 'shortdoc'
           },
           // 搜索框
           // {
