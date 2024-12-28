@@ -16,14 +16,19 @@ sidebar_position: 1
 
 ## 路线图
 
-正在翻译:
-
-* **AuraSkills**
-
 即将翻译
 
 * CoreProtect
+* LevelledMobs
+* EconomyShopGUI(正在找作者要文档源代码)
 * AuraMobs
+
+翻译完成
+
+* zNPCs
+* HuskClaims
+* BetterHud
+* PhantomWorlds
 
 ## 更多
 
