@@ -332,6 +332,10 @@ const config = {
       src: '/autoload.js',
       defer: true,
     },
+    {
+      src: '/hocon.min.js',
+      defer: true,
+    },
   ],
 };
 
