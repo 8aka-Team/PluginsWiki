@@ -93,6 +93,18 @@ const config = {
         editCurrentVersion: true,
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
+      }],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'betterhud',
+        path: 'betterhud',
+        routeBasePath: 'BetterHud',
+        editUrl: 'https://github.com/8aka-Team/PluginsWiki/tree/main',
+        sidebarPath: require.resolve('./sidebars.js'),
+        editCurrentVersion: true,
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
       }]
     ,[
       '@docusaurus/plugin-pwa',
@@ -167,6 +179,13 @@ const config = {
             position: 'left',
             label: '短文档',
             docsPluginId: 'shortdoc'
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'tutorialSidebar',
+            position: 'left',
+            label: 'BetterHud',
+            docsPluginId: 'betterhud'
           },
           // 搜索框
           // {

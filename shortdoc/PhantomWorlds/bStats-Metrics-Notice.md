@@ -2,6 +2,8 @@
 sidebar_position: 3
 ---
 
+# bStats
+
 ![bStats 图表](https://bstats.org/signatures/bukkit/PhantomWorlds.svg)
 
 我们使用 bStats 来收集运行 PW 的服务器的一些基本信息，所有这些信息都可以在[这里](https://bstats.org/plugin/bukkit/PhantomWorlds/8916)公开查看。
