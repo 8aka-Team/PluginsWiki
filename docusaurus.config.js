@@ -105,6 +105,18 @@ const config = {
         editCurrentVersion: true,
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
+      }],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'huskclaims',
+        path: 'huskclaims',
+        routeBasePath: 'HuskClaims',
+        editUrl: 'https://github.com/8aka-Team/PluginsWiki/tree/main',
+        sidebarPath: require.resolve('./sidebars.js'),
+        editCurrentVersion: true,
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
       }]
     ,[
       '@docusaurus/plugin-pwa',
@@ -186,6 +198,13 @@ const config = {
             position: 'left',
             label: 'BetterHud',
             docsPluginId: 'betterhud'
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'tutorialSidebar',
+            position: 'left',
+            label: 'HuskClaims',
+            docsPluginId: 'huskclaims'
           },
           // 搜索框
           // {
