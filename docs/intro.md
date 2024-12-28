@@ -18,10 +18,8 @@ sidebar_position: 1
 
 即将翻译
 
-* CoreProtect
 * LevelledMobs
 * EconomyShopGUI(正在找作者要文档源代码)
-* AuraMobs
 
 翻译完成
 
