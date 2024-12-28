@@ -24,6 +24,7 @@ sidebar_position: 1
 翻译完成
 
 * zNPCs(Plus)
+* ScreamingBedWars
 * BlueMap
 * HuskClaims
 * BetterHud
