@@ -23,7 +23,7 @@ sidebar_position: 1
 
 翻译完成
 
-* zNPCs
+* zNPCs(Plus)
 * BlueMap
 * HuskClaims
 * BetterHud
