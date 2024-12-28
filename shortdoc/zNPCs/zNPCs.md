@@ -3,7 +3,7 @@ sidebar_position: 2
 ---
 
 
-# zNPCs
+# zNPCs(不推荐)
 
 欢迎来到ZNPCS Wiki！在这里，您可以找到关于该插件的帮助和常见问题解答。
 
