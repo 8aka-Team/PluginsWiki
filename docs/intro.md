@@ -29,6 +29,7 @@ sidebar_position: 1
 * HuskClaims
 * BetterHud
 * PhantomWorlds
+* ChestCommand
 
 ## 更多
 
