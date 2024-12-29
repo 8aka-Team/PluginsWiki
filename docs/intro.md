@@ -29,6 +29,7 @@ sidebar_position: 1
 * HuskClaims
 * HuskTowns
 * BetterHud
+* BeautyQuests
 * PhantomWorlds
 * ChestCommand
 * CustomRecipes
