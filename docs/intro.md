@@ -32,6 +32,7 @@ sidebar_position: 1
 * PhantomWorlds
 * ChestCommand
 * CustomRecipes
+* RoseResourcepack
 
 ## 更多
 
