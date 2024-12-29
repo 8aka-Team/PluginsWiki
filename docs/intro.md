@@ -19,6 +19,7 @@ sidebar_position: 1
 即将翻译
 
 * LevelledMobs
+* MyPet
 * EconomyShopGUI(正在找作者要文档源代码)
 
 翻译完成
