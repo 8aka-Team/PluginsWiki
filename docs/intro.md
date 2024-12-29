@@ -31,6 +31,7 @@ sidebar_position: 1
 * BetterHud
 * PhantomWorlds
 * ChestCommand
+* CustomRecipes
 
 ## 更多
 
