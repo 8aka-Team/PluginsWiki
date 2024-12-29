@@ -27,6 +27,7 @@ sidebar_position: 1
 * ScreamingBedWars
 * BlueMap
 * HuskClaims
+* HuskTowns
 * BetterHud
 * PhantomWorlds
 * ChestCommand
