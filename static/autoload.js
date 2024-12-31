@@ -31,7 +31,7 @@ if (screen.width >= 768) {
 		loadExternalResource(live2d_path + "live2d.min.js", "js"),
 		loadExternalResource(live2d_path + "waifu-tips.js", "js")
 	]).then(() => {
-		// 配置选项的具体用法见 README.md
+		// 配置选项的具体用法见 intro.md
 		initWidget({
 			waifuPath: live2d_path + "waifu-tips.json",
 			//apiPath: "https://live2d.fghrsh.net/api/",
