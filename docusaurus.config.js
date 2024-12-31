@@ -121,9 +121,32 @@ const config = {
     [
       '@docusaurus/plugin-content-docs',
       {
+        id: 'husktowns',
+        path: 'husktowns',
+        routeBasePath: 'HuskTowns',
+        editUrl: 'https://github.com/8aka-Team/PluginsWiki/tree/main',
+        sidebarPath: require.resolve('./sidebars.js'),
+        editCurrentVersion: true,
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      }],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
         id: 'bluemap',
         path: 'bluemap',
         routeBasePath: 'BlueMap',
+        editUrl: 'https://github.com/8aka-Team/PluginsWiki/tree/main',
+        sidebarPath: require.resolve('./sidebars.js'),
+        editCurrentVersion: true,
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      }],[
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'chestcommand',
+        path: 'chest-command',
+        routeBasePath: 'ChestCommand',
         editUrl: 'https://github.com/8aka-Team/PluginsWiki/tree/main',
         sidebarPath: require.resolve('./sidebars.js'),
         editCurrentVersion: true,
@@ -222,8 +245,22 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
+            label: 'HuskTowns',
+            docsPluginId: 'husktowns'
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'tutorialSidebar',
+            position: 'left',
             label: 'BlueMap',
             docsPluginId: 'bluemap'
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'tutorialSidebar',
+            position: 'left',
+            label: 'ChestCommand',
+            docsPluginId: 'chestcommand'
           },
           // 搜索框
           // {

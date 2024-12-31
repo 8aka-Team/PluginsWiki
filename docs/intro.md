@@ -19,15 +19,22 @@ sidebar_position: 1
 即将翻译
 
 * LevelledMobs
+* MyPet
 * EconomyShopGUI(正在找作者要文档源代码)
 
 翻译完成
 
-* zNPCs
+* zNPCs(Plus)
+* ScreamingBedWars
 * BlueMap
 * HuskClaims
+* HuskTowns
 * BetterHud
+* BeautyQuests
 * PhantomWorlds
+* ChestCommand
+* CustomRecipes
+* RoseResourcepack
 
 ## 更多
 
