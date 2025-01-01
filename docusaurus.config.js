@@ -144,9 +144,9 @@ const config = {
       }],[
       '@docusaurus/plugin-content-docs',
       {
-        id: 'chestcommand',
-        path: 'chest-command',
-        routeBasePath: 'ChestCommand',
+        id: 'chestcommands',
+        path: 'chest-commands',
+        routeBasePath: 'ChestCommands',
         editUrl: 'https://github.com/8aka-Team/PluginsWiki/tree/main',
         sidebarPath: require.resolve('./sidebars.js'),
         editCurrentVersion: true,
