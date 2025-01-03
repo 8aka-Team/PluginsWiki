@@ -43,7 +43,7 @@ sidebar_position: 3
 
 ### 使用Boss栏样式的生命值指示器作为名称标签
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption><p>此规则在生物上的输出示例。</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""></img><figcaption><p>此规则在生物上的输出示例。</p></figcaption></figure>
 
 ```yaml
   - custom-rule: 'Boss栏样式名称标签'

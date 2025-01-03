@@ -1,46 +1,43 @@
-# 👾 Sample Custom Drops
+---
+sidebar_position: 1
+---
 
-Note: It has been discovered that with Minecraft 1.20.6+, the drop tables which utilize the NBT-Data feature no longer function as intended as NBT data is handled differently. I may eventually update these to function under the new system but no promises. \
-The other tables, such as xEffects, should be unaffected.&#x20;
+# 👾 示例自定义掉落
+
+注意：已发现，在Minecraft 1.20.6+版本中，使用NBT数据功能的掉落表不再按预期工作，因为NBT数据的处理方式发生了变化。我可能会在将来更新这些表以适应新系统，但不做任何保证。其他表，如xEffects，应该不受影响。
 
 ***
 
-### The xEffects Library
+### xEffects库
 
-This is a collection of drop tables which, utilizing Minecraft's native `/particle`, `/playsound`, and `/summon area_effect_cloud` commands, creates different kinds of effects around the mob at the moment of their deaths. Below is a demonstration video of all three kinds of xEffects in action.
+这是一个掉落表的集合，利用Minecraft原生的`/particle`、`/playsound`和`/summon area_effect_cloud`命令，在生物死亡时在其周围创建不同类型的效果。以下是所有三种xEffects的演示视频。
 
-{% embed url="https://www.youtube.com/watch?v=mB9plPAO364" %}
-A proof-of-concept demo video from LevelledMobs 3
-{% endembed %}
+* [在此下载完整的表文件](https://github.com/UltimaOath/LevelledMobs/blob/master/src/main/resources/customdrops\_xeffects\_library.yml)。
 
-* [Download the full table file here](https://github.com/UltimaOath/LevelledMobs/blob/master/src/main/resources/customdrops\_xeffects\_library.yml).
+这些表利用Minecraft的Execute命令在正确的世界和玩家中执行命令。每个方面都是可定制的，并且设计得尽可能用户友好。
 
-These tables utilize Minecraft's Execute command to perform the commands in the proper worlds and for the correct players. Every aspect is customizable, and it's designed to be as user friendly as possible.
+### 分级的损坏武器和盔甲
 
-### Tiered Damaged Weapons and Armor
+* [下界合金套装](https://github.com/UltimaOath/LevelledMobs/blob/master/src/main/resources/customdrops\_tiered\_netherite\_tools.yml)
+* [钻石套装](https://github.com/UltimaOath/LevelledMobs/blob/master/src/main/resources/customdrops\_tiered\_diamond\_tools.yml)
+* [铁套装](https://github.com/UltimaOath/LevelledMobs/blob/master/src/main/resources/customdrops\_tiered\_iron\_tools.yml)
+* [木/皮革套装](https://github.com/UltimaOath/LevelledMobs/blob/master/src/main/resources/customdrops\_tiered\_wooden\_tools.yml)
 
-* [Netherite Set](https://github.com/UltimaOath/LevelledMobs/blob/master/src/main/resources/customdrops\_tiered\_netherite\_tools.yml)
-* [Diamond Set](https://github.com/UltimaOath/LevelledMobs/blob/master/src/main/resources/customdrops\_tiered\_diamond\_tools.yml)
-* [Iron Set](https://github.com/UltimaOath/LevelledMobs/blob/master/src/main/resources/customdrops\_tiered\_iron\_tools.yml)
-* [Wood / Leather Set](https://github.com/UltimaOath/LevelledMobs/blob/master/src/main/resources/customdrops\_tiered\_wooden\_tools.yml)
+每个表都包含每种类型的物品：剑、斧、头盔、胸甲、护腿、靴子和一套远程物品。
 
-Each of these tables include a table for each type of item: sword, axe, helmet, chestplate, leggings, boots, and a set of ranged items.
+每个表的工作原理是将所有相同类型的物品放在一个表中，每个物品都有不同程度的损坏。使用组限制功能，这些物品在任何给定时间只能选择一个，损坏程度更高的版本更有可能出现。
 
-Each table works by having all the items of the same type in one table, and each item has various degrees of damage applied to it. Using the Group Limits feature, these items are limited to only one of them being selected at any given time, with the more damaged version being more likely to occur.&#x20;
+这对于装备生物非常有用，这样它们可以从一系列随机物品中选择，当它们死亡时，如果掉落物品，它们将处于不同的耐久状态。
 
-This is useful for kitting out mobs, so that they have a range of random items they can pick from and when they die if they drop the item they will be in various states of durability.&#x20;
+### 杂项表和技巧
 
+* [在此下载表文件](https://github.com/UltimaOath/LevelledMobs/blob/master/src/main/resources/customdrops\_misc.yml)。
 
+这些表在编写时不属于任何特定组。如果UltimaOath有随机想法，他可能会在测试后将其添加到这里。
 
-### Miscellaneous Tables and Tricks
+包含的一些表：
 
-* [Download the table file here](https://github.com/UltimaOath/LevelledMobs/blob/master/src/main/resources/customdrops\_misc.yml).
-
-This collection of tables do not fit into any particular group at the time of their writing. If UltimaOath gets a random idea, he'll probably add it here once it's been tested out.
-
-Some of the tables included within:
-
-* Simplified Weapon and Armor Tiers (S, A, B, and C)
-* The Minecraft Disc Collection
-* The Shatter-ReSpawn Effect
-* Give Money to Players
+* 简化的武器和盔甲等级（S、A、B和C）
+* Minecraft唱片收藏
+* 破碎-重生效果
+* 给玩家金钱
