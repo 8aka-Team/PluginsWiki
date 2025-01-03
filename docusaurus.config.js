@@ -271,7 +271,7 @@ const config = {
             sidebarId: 'tutorialSidebar',
             position: 'left',
             label: 'ChestCommand',
-            docsPluginId: 'chestcommand'
+            docsPluginId: 'chestcommands'
           },
           {
             type: 'docSidebar',
