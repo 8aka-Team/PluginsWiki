@@ -18,13 +18,16 @@ sidebar_position: 1
 
 即将翻译
 
-* LevelledMobs
+* Sonar
+* Typewriter
+* BetterHealthBar3
 * MyPet
 * EconomyShopGUI(正在找作者要文档源代码)
 
 翻译完成
 
 * zNPCs(Plus)
+* LevelledMobs
 * ScreamingBedWars
 * BlueMap
 * HuskClaims
