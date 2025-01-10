@@ -18,7 +18,6 @@ sidebar_position: 1
 
 即将翻译
 
-* Sonar
 * Typewriter
 * MyPet
 * EconomyShopGUI(正在找作者要文档源代码)
@@ -38,6 +37,7 @@ sidebar_position: 1
 * CustomRecipes
 * RoseResourcepack
 * BetterHealthBar3
+* Sonar
 
 ## 更多
 
