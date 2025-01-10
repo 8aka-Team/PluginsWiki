@@ -20,7 +20,6 @@ sidebar_position: 1
 
 * Sonar
 * Typewriter
-* BetterHealthBar3
 * MyPet
 * EconomyShopGUI(正在找作者要文档源代码)
 
@@ -38,6 +37,7 @@ sidebar_position: 1
 * ChestCommand
 * CustomRecipes
 * RoseResourcepack
+* BetterHealthBar3
 
 ## 更多
 
