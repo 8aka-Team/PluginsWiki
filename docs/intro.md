@@ -18,7 +18,7 @@ sidebar_position: 1
 
 即将翻译
 
-* Typewriter
+* Typewriter(会单独开个项目)
 * MyPet
 * EconomyShopGUI(正在找作者要文档源代码)
 
