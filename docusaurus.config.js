@@ -281,7 +281,7 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'ChestCommand',
+            label: 'ChestCommands',
             docsPluginId: 'chestcommands'
           },
           {
@@ -379,17 +379,6 @@ const config = {
         respectPrefersColorScheme: true,
       },
 
-      // 搜索
-      // algolia: {
-      //   // The application ID provided by Algolia
-      //   appId: 'D1KV1BYF3B',
-      //
-      //   // Public API key: it is safe to commit it
-      //   apiKey: '4bb3573e59f2c49f30f057ce54edab3f',
-      //
-      //   indexName: 'yizhan',
-      //
-      // },
       mermaid: {
         theme: { light: "neutral", dark: "dark" },
       },
@@ -405,6 +394,7 @@ const config = {
               indexDocs: true,
               indexBlog: false,
               indexPages: false,
+              docsRouteBasePath: "/"
             })
         ],
   ],
@@ -412,11 +402,7 @@ const config = {
     {
       src: '/autoload.js',
       defer: true,
-    },
-    {
-      src: '/hocon.min.js',
-      defer: true,
-    },
+    }
   ],
 };
 
