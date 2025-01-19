@@ -33,7 +33,7 @@ sidebar_position: 1
 * BetterHud
 * BeautyQuests
 * PhantomWorlds
-* ChestCommand
+* ChestCommands
 * CustomRecipes
 * RoseResourcepack
 * BetterHealthBar3
