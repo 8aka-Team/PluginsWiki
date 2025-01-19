@@ -346,20 +346,8 @@ const config = {
             title: '友链',
             items: [
               {
-                label: '服主资源导航页',
-                href: 'http://mcnav.fun',
-              },
-              {
-                label: 'CSKB 日冕知识库',
-                href: 'https://kb.corona.studio',
-              },
-              {
-                label: 'McRes 灵依资源站',
-                href: 'https://mcres.cn/',
-              },
-              {
-                label: 'Tinksp 资源站',
-                href: 'https://www.tinksp.com',
+                label: 'Continue Project',
+                href: 'https://snowcutieowo.github.io/',
               },
             ],
           },
