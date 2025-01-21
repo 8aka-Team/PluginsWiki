@@ -20,7 +20,6 @@ sidebar_position: 1
 
 * MyPet
 * Bentobox
-* Minepacks
 * DeluxeHubReloaded (该作者文档尚未完善)
 * [VoidGen](https://github.com/NicoNekoDev/VoidGen)
 
@@ -28,6 +27,7 @@ sidebar_position: 1
 
 * zNPCs(Plus)
 * LevelledMobs
+* Minepacks
 * ScreamingBedWars
 * BlueMap
 * HuskClaims
