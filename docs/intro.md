@@ -22,6 +22,12 @@ sidebar_position: 1
 * Bentobox
 * DeluxeHubReloaded (该作者文档尚未完善)
 * [VoidGen](https://github.com/NicoNekoDev/VoidGen)
+* WeaponMechanics
+* * Mechanics
+* * WeaponMechanics
+* * Weapon Mechanics Cosmetics
+* * Weapon Mechanics Plus
+* * Armor Mechanics
 
 翻译完成
 
