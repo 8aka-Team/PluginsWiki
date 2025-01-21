@@ -9,7 +9,7 @@
 
 权限：backpack.migrate
 
-用法：/backpack migrate db <目标数据库类型 (mysql/sqlite/files)>
+用法：/backpack migrate db \<目标数据库类型 (mysql/sqlite/files)\>
 
 ### MySQL
 在使用迁移命令之前，需要在`config.yml`中设置（并加载）数据库服务器、主机地址和凭据（不要更改数据库类型）。
