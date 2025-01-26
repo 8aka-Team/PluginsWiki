@@ -18,14 +18,22 @@ sidebar_position: 1
 
 即将翻译
 
-* Typewriter(会单独开个项目)
 * MyPet
-* EconomyShopGUI(正在找作者要文档源代码)
+* Bentobox
+* DeluxeHubReloaded (该作者文档尚未完善)
+* [VoidGen](https://github.com/NicoNekoDev/VoidGen)
+* WeaponMechanics
+* * Mechanics
+* * WeaponMechanics
+* * Weapon Mechanics Cosmetics
+* * Weapon Mechanics Plus
+* * Armor Mechanics
 
 翻译完成
 
 * zNPCs(Plus)
 * LevelledMobs
+* Minepacks
 * ScreamingBedWars
 * BlueMap
 * HuskClaims
@@ -33,11 +41,12 @@ sidebar_position: 1
 * BetterHud
 * BeautyQuests
 * PhantomWorlds
-* ChestCommand
+* ChestCommands
 * CustomRecipes
 * RoseResourcepack
 * BetterHealthBar3
 * Sonar
+* [Typewriter](https://typewriter.yizhan.wiki)
 
 ## 更多
 

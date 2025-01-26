@@ -23,31 +23,11 @@ https://plugins.yizhan.wiki
 
 [企鹅群🐧611076407](https://qm.qq.com/q/lEnfzgzxjq)
 
-# 🎖 贡献
+# 🤝 贡献者
 
-<table>
-  <tr>
-  <!-- lilingfeng -->
-    <td align="center">
-      <a href="https://github.com/lilingfengdev"
-        ><img
-          src="https://avatars.githubusercontent.com/u/145678359"
-          width="50px;"
-          alt=""
-        /><br /><sub><b>lilingfeng</b></sub></a>
-      <p>项目建立者,维护者</p>
-      </a>
-    </td>
-<!-- Yi zhan -->
-    <td align="center">
-      <a href="https://github.com/postyizhan"
-        ><img
-          src="https://avatars.githubusercontent.com/u/97342038"
-          width="50px;"
-          alt=""
-        /><br /><sub><b>驿站</b></sub></a
-      >
-      <p>项目维护者</p>
-      </a>
-    </td>
-</table>
+[![Contrib](https://contrib.rocks/image?repo=8aka-Team/PluginsWiki)](https://github.com/8aka-Team/PluginsWiki/graphs/contributors)
+
+# ⭐ 历史图
+
+[![Stargazers over time](https://starchart.cc/8aka-Team/PluginsWiki.svg?variant=adaptive)](https://starchart.cc/8aka-Team/PluginsWiki)
+
