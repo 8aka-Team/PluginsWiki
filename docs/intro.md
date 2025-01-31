@@ -46,7 +46,7 @@ sidebar_position: 1
 * RoseResourcepack
 * BetterHealthBar3
 * Sonar
-* [Typewriter](https://typewriter.yizhan.wiki)
+* [Typewriter](https://typewriter.8aka.org)
 
 ## 更多
 

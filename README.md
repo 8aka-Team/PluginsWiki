@@ -14,7 +14,7 @@
 
 # 📖 开始阅读
 
-https://plugins.yizhan.wiki
+https://plugins.8aka.org
 
 
 ![:plugin-wiki](https://count.kjchmc.cn/get/@:PluginWiki)

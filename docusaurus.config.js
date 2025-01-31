@@ -325,7 +325,7 @@ const config = {
             items: [
               {
                 label: '驿站主页',
-                to: 'https://yizhan.wiki',
+                to: 'https://8aka.org',
               },
               {
                 label: 'GitHub',
