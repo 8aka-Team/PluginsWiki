@@ -12,7 +12,7 @@ async function injectAd() {
 
         // 3. 创建广告容器
         const adContainer = document.createElement('div');
-        adContainer.className = 'ad-container';
+        adContainer.className = 'extern-container';
 
         // 4. 创建广告元素
         ads.forEach(ad => {
@@ -21,14 +21,14 @@ async function injectAd() {
             link.target = '_blank';
             link.rel = 'noopener noreferrer';
             link.textContent = ad.name;
-            link.className = 'ad-link';
+            link.className = 'extern-link';
             adContainer.appendChild(link);
         });
 
         // 5. 响应式插入逻辑
         const updateAdPosition = () => {
             // 移除旧广告位置
-            const existingAd = document.querySelector('.ad-container');
+            const existingAd = document.querySelector('.extern-container');
             if (existingAd) existingAd.remove();
 
             // 桌面端插入位置（导航栏右侧）
@@ -58,18 +58,18 @@ async function injectAd() {
         // 6. 基础样式
         const style = document.createElement('style');
         style.textContent = `
-        .ad-container {
+        .extern-container {
           display: flex;
           gap: 1rem;
           align-items: center;
         }
-        .ad-link {
+        .extern-link {
           color: var(--ifm-link-color);
           padding: 0.5rem;
           border-radius: 4px;
           transition: opacity 0.2s;
         }
-        .ad-link:hover {
+        .extern-link:hover {
           opacity: 0.8;
           text-decoration: none;
         }

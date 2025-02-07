@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.navbar__items--right .ad-container {
+.navbar__items--right .extern-container {
   margin-left: 1.5rem;
 }
 
