@@ -4,29 +4,29 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: '「简单」',
-    Svg: require('@site/static/img/grass.svg').default,
+    title: '「准确」',
+    Svg: require('@site/static/img/bookshelf.svg').default,
     description: (
       <>
-        手把手教你,甚至双击就可以完成
+        多次检查,避免出错
       </>
     ),
   },
   {
-    title: '「详细」',
-    Svg: require('@site/static/img/crafting-table.svg').default,
+    title: '「快速」',
+    Svg: require('@site/static/img/snow.svg').default,
     description: (
       <>
-        充实的内容,让你新手变大佬
+        保持更新!
       </>
     ),
   },
   {
-    title: '「现代」',
-    Svg: require('@site/static/img/furnace.svg').default,
+    title: '「丰富」',
+    Svg: require('@site/static/img/labtable.svg').default,
     description: (
       <>
-        基于 MC 社区最新内容编写,保持更新
+        非常多的插件 Wiki
       </>
     ),
   },
