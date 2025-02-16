@@ -46,7 +46,7 @@ example_font:
       y: 0
       scale: 2.0
 ```
-可以添加具有此感觉的图像，然后在文本布局模式中以`<image:star>`的方式使用它。
+可以添加具有此样式的图像，然后在文本布局模式中以`<image:star>`的方式使用它。
 
 ## 如何更改第一个Bossbar字体
 1. font.yml `merge-default-bitmap: false`
