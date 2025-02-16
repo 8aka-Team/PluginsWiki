@@ -188,7 +188,19 @@ const config = {
         editCurrentVersion: true,
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
-      }]
+      }],[
+        '@docusaurus/plugin-content-docs',
+      {
+        id: 'viaversion',
+        path: 'viaversion',
+        routeBasePath: 'viaversion',
+        editUrl: 'https://github.com/8aka-Team/PluginsWiki/tree/main',
+        sidebarPath: require.resolve('./sidebars.js'),
+        editCurrentVersion: true,
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      }
+    ]
     ,[
       '@docusaurus/plugin-pwa',
       {
@@ -316,6 +328,12 @@ const config = {
             position: 'left',
             label: 'WeaponMechanics',
             docsPluginId: 'weaponmechanics'
+          },{
+            type: 'docSidebar',
+            sidebarId: 'tutorialSidebar',
+            position: 'left',
+            label: 'ViaVersion',
+            docsPluginId: 'viaversion'
           },
           // 搜索框
           // {
