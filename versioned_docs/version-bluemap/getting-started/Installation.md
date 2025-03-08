@@ -44,7 +44,7 @@ Web应用程序期望地图数据位于webroot内的 `./maps/` 文件夹中。�
 - 打开 `core.conf` 配置文件，阅读注释并通过将 `accept-download` 更改为 `true` 来同意从Mojang下载一些额外资源。
 - 打开 `webserver.conf` 配置文件，并将 `port` 更改为你从托管提供商处获得的**第二个端口**。
 - 现在你可以浏览其余的配置文件，并根据你的喜好更改设置。
-  *(更多关于配置BlueMap的信息可以在[这里](/bluemap/wiki/getting-started/Configuration)找到)*
+  *(更多关于配置BlueMap的信息可以在[这里](/versioned_docs/version-bluemap/wiki/getting-started/Configuration)找到)*
 - 编辑完配置后，在服务器上使用命令 `/bluemap reload` 或重启服务器。
 
 如果一切设置正确，BlueMap应该开始渲染你的地图。检查控制台/日志以查看是否有任何错误或警告。
@@ -61,7 +61,7 @@ Web应用程序期望地图数据位于webroot内的 `./maps/` 文件夹中。�
 ### 步骤
 - 使用上述基本设置正常安装BlueMap
 - 在你的配置文件中，打开 `storages/sql.conf` 文件并配置与SQL服务器的连接。
-  *(有关此配置文件的更多信息，请参见[此页面](/bluemap/wiki/customization/Storages.html#mysql-mariadb--postgres))*
+  *(有关此配置文件的更多信息，请参见[此页面](/versioned_docs/version-bluemap/wiki/customization/Storages.html#mysql-mariadb--postgres))*
 - 现在打开每个地图配置文件，并将 `storage` 设置为 `"sql"`。
 - 使用 `/bluemap reload` 重新加载BlueMap。
 - 现在你的地图存储在数据库中，你应该从文件系统中删除旧的地图数据，以防止干扰。
@@ -89,10 +89,10 @@ Web应用程序期望地图数据位于webroot内的 `./maps/` 文件夹中。�
 - 打开 `core.conf` 配置文件，阅读注释并通过将 `accept-download` 更改为 `true` 来同意从Mojang下载一些额外资源。
 - 为你想要渲染的世界设置地图配置。
 - 现在你可以浏览其余的配置文件，并根据你的喜好更改设置。
-  *(更多关于配置BlueMap的信息可以在[这里](/bluemap/wiki/getting-started/Configuration)找到)*
+  *(更多关于配置BlueMap的信息可以在[这里](/versioned_docs/version-bluemap/wiki/getting-started/Configuration)找到)*
 - 编辑完配置后，运行 `java -jar BlueMap-cli.jar -r` 开始渲染。
 - 使用 `java -jar BlueMap-cli.jar -w` 你也可以启动内置的Web服务器以查看你的地图。
-  或者你可以阅读[此](/bluemap/wiki/webserver)以了解如何为BlueMap设置NGINX或Apache。
+  或者你可以阅读[此](/versioned_docs/version-bluemap/wiki/webserver)以了解如何为BlueMap设置NGINX或Apache。
 - 使用 `java -jar BlueMap-cli.jar -h` 获取所有可用标志的列表和解释。
 
 ## 使用BlueMap Docker镜像

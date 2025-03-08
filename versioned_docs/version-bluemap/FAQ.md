@@ -55,7 +55,7 @@ BlueMap需要等待服务器将世界数据保存到磁盘，因此地图上的�
 - 你在地图配置中禁用了高分辨率图块。  
   在地图配置中将 `enable-hires` 设置为 `true`，并清除你的地图，以便BlueMap重新渲染并启用高分辨率图块。
 - 你没有正确设置外部Web服务器。  
-  请确保你已经阅读了[外部Web服务器](/bluemap/wiki/webserver/)指南，了解如何操作。
+  请确保你已经阅读了[外部Web服务器](/versioned_docs/version-bluemap/wiki/webserver/)指南，了解如何操作。
 
 如果你仍然遇到问题，请访问我们的[Discord](https://bluecolo.red/map-discord)中的[#support](https://discord.com/channels/665868367416131594/751804128749027421)。  
 
@@ -99,7 +99,7 @@ BlueMap与你的服务器线程异步运行，因此只要CPU没有达到最大�
 阅读[此指南](https://bluemap.bluecolored.de/wiki/getting-started/Configuration.html#configuring-your-maps-adding--removing-maps)了解更多信息。
 
 ### 问：如何为我的地图添加SSL（HTTPS）？
-BlueMap的集成Web服务器本身不支持（也不会支持）SSL，但你可以[使用NGINX反向代理你的地图](/bluemap/wiki/webserver/NginxProxy.html)并以此方式添加SSL。
+BlueMap的集成Web服务器本身不支持（也不会支持）SSL，但你可以[使用NGINX反向代理你的地图](/versioned_docs/version-bluemap/wiki/webserver/NginxProxy.html)并以此方式添加SSL。
 
 ### 问：如何为我的地图添加身份验证？
 BlueMap本身不支持身份验证。相反，你可以[使用外部Web服务器进行HTTP基本身份验证](https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/)。

@@ -1,0 +1,24 @@
+diff --git a/src/versions/index.ts b/src/versions/index.ts
+index bb77f8cbbdf41af3360e622e628f0af19a9acc9a..a55f820d477dba9889860fdcf0fe5c79291ffa47 100644
+--- a/src/versions/index.ts
++++ b/src/versions/index.ts
+@@ -89,18 +89,7 @@ export function getDefaultVersionBanner({
+   versionNames,
+   lastVersionName,
+ }: VersionContext): VersionBanner | null {
+-  // Current version: good, no banner
+-  if (versionName === lastVersionName) {
+-    return null;
+-  }
+-  // Upcoming versions: unreleased banner
+-  if (
+-    versionNames.indexOf(versionName) < versionNames.indexOf(lastVersionName)
+-  ) {
+-    return 'unreleased';
+-  }
+-  // Older versions: display unmaintained banner
+-  return 'unmaintained';
++  return 'none';
+ }
+ 
+ export function getVersionBanner(

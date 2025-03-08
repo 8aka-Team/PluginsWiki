@@ -6,7 +6,7 @@ sidebar_position: 1
 
 BlueMap 允许您在地图上添加各种标记。您可以通过在地图配置中手动配置它们，或者通过使用 BlueMap 的 [API](https://github.com/BlueMap-Minecraft/BlueMapAPI) 的第三方插件来管理标记。
 
-使用 BlueMap API 的已知第三方插件列表可在 [这里](/bluemap/community/3rdPartySupport.html) 找到。
+使用 BlueMap API 的已知第三方插件列表可在 [这里](/versioned_docs/version-bluemap/community/3rdPartySupport.html) 找到。
 
 ## 标记集
 

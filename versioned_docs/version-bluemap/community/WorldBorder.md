@@ -41,7 +41,7 @@ marker-sets: {
     }
 }
 ```
-有关如何创建标记的更多信息，请参阅[官方标记指南](/bluemap/wiki/customization/Markers.html)。
+有关如何创建标记的更多信息，请参阅[官方标记指南](/versioned_docs/version-bluemap/wiki/customization/Markers.html)。
 
 ## 使用命令手动添加
 你也可以使用流行的第三方插件[BlueMap Marker Manager](https://modrinth.com/plugin/bmarker)手动创建标记。（可作为Paper插件和Fabric模组使用。）  
