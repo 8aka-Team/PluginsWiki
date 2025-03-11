@@ -269,71 +269,52 @@ const config = {
         hideOnScroll: true,
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            type: 'dropdown',
+            label: '翻译文档',
             position: 'left',
-            label: '短文档',
-            docsPluginId: 'shortdoc'
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'BetterHud',
-            docsPluginId: 'betterhud'
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'HuskClaims',
-            docsPluginId: 'huskclaims'
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'HuskTowns',
-            docsPluginId: 'husktowns'
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'BlueMap',
-            docsPluginId: 'bluemap'
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'ChestCommands',
-            docsPluginId: 'chestcommands'
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'LevelledMobs',
-            docsPluginId: 'levelledmobs'
-          },{
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Sonar',
-            docsPluginId: 'sonar'
-          },{
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'WeaponMechanics',
-            docsPluginId: 'weaponmechanics'
-          },{
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'ViaVersion',
-            docsPluginId: 'viaversion'
+            items: [
+              {
+                href: 'https://plugins.8aka.org/intro',
+                label: '主页',
+              },
+              {
+                href: 'https://plugins.8aka.org/ShortDoc/intro',
+                label: '短文档',
+              },
+              {
+                label: 'BetterHud',
+                href: 'https://plugins.8aka.org/BetterHud/intro',
+              },
+              {
+                label: 'HuskClaims',
+                href: 'https://plugins.8aka.org/HuskClaims/intro'
+              },
+              {
+                label: 'HuskTowns',
+                href: 'https://plugins.8aka.org/HuskTowns/intro'
+              },
+              {
+                label: 'BlueMap',
+                href: 'https://plugins.8aka.org/BlueMap/intro'
+              },
+              {
+                label: 'ChestCommands',
+                href: 'https://plugins.8aka.org/ChestCommands/intro'
+              },
+              {
+                label: 'LevelledMobs',
+                href: 'https://plugins.8aka.org/LevelledMobs/intro'
+              },{
+                label: 'Sonar',
+                href: 'https://plugins.8aka.org/Sonar/intro'
+              },{
+                label: 'WeaponMechanics',
+                href: 'https://plugins.8aka.org/WeaponMechanics/intro'
+              },{
+                label: 'ViaVersion',
+                href: 'https://plugins.8aka.org/viaversion/intro'
+              },
+            ],
           },
           // 搜索框
           // {
