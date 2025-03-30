@@ -18,8 +18,6 @@ sidebar_position: 2
 
 `GitHub` https://github.com/ViaVersion/ViaVersion
 
-`插件百科` https://mineplugin.org/ViaVersion
-
 :::
 
 :::warning

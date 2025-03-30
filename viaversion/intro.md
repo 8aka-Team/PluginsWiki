@@ -52,8 +52,6 @@ sidebar_position: 1
 
 `GitHub` https://github.com/ViaVersion/ViaVersion/releases
 
-`插件百科` https://mineplugin.org/ViaVersion
-
 #### ViaBackwards 
 
 `SpigotMC` https://www.spigotmc.org/resources/.27448
