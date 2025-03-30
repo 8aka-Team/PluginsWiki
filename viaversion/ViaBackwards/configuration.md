@@ -13,7 +13,7 @@ sidebar_position: 3
 :::
 
 ```yaml
-# 如果你需要官方的帮助，你可以加入这个 discord 频道 -> https://viaversion.com/discord
+# 如果你需要官方的帮助，你可以加入这个 Discord 频道 -> https://viaversion.com/discord
 #                                  汉化 by yao三七
 #
 # 是否始终显示生物的原始名称，而不是仅在光标指向生物时显示
