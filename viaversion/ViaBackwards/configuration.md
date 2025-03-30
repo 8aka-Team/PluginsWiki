@@ -8,7 +8,7 @@ sidebar_position: 3
 
 :::tip
 
-在编辑 yaml 时，请尽量使用[文本编辑器](https://nitwikit.8aka.org/preparation/text-editor/)编辑，如 VSCode。
+在编辑 YAML文件 时，请尽量使用[文本编辑器](https://nitwikit.8aka.org/preparation/text-editor/)编辑，如 VSCode。
 
 :::
 
