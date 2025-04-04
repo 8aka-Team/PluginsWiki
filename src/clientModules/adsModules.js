@@ -1,27 +1,27 @@
 // src/clientModules/adModule.js
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 
-async function injectAd() {
+async function injectExternLink() {
     try {
         // 1. 获取广告数据
         const response = await fetch('https://ad-api.8aka.org/ads');
-        const ads = await response.json();
+        const links = await response.json();
 
         // 2. 验证数据格式
-        if (!Array.isArray(ads) || ads.length === 0) return;
+        if (!Array.isArray(links) || links.length === 0) return;
 
         // 3. 创建广告容器
         const adContainer = document.createElement('div');
         adContainer.className = 'extern-container';
 
         // 4. 创建广告元素
-        ads.forEach(ad => {
+        links.forEach(ad => {
             const link = document.createElement('a');
             link.href = ad.url;
             link.target = '_blank';
             link.rel = 'noopener noreferrer';
             link.textContent = ad.name;
-            link.className = 'extern-link';
+            link.className = 'ad-item'; // 使用已有的ad-item类
             adContainer.appendChild(link);
         });
 
@@ -35,7 +35,17 @@ async function injectAd() {
             if (window.innerWidth >= 996) {
                 const desktopTarget = document.querySelector('.navbar__items--right');
                 if (desktopTarget) {
-                    desktopTarget.prepend(adContainer);
+                    // 确保插入在搜索框和GitHub图标之前
+                    const firstChild = desktopTarget.firstChild;
+                    if (firstChild) {
+                        desktopTarget.insertBefore(adContainer, firstChild);
+                    } else {
+                        desktopTarget.prepend(adContainer);
+                    }
+                    // 移除可能的移动端样式
+                    adContainer.classList.remove('mobile-ad');
+                    // 添加桌面端样式
+                    adContainer.classList.add('desktop-ad');
                 }
             }
             // 移动端插入位置（侧边栏底部）
@@ -44,6 +54,7 @@ async function injectAd() {
                 if (mobileTarget) {
                     mobileTarget.appendChild(adContainer);
                     // 添加移动端专用样式
+                    adContainer.classList.remove('desktop-ad');
                     adContainer.classList.add('mobile-ad');
                 }
             }
@@ -52,32 +63,54 @@ async function injectAd() {
         // 初始插入
         updateAdPosition();
 
-        // 监听窗口变化
-        window.addEventListener('resize', updateAdPosition);
+        // 监听窗口变化，使用防抖提高性能
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(updateAdPosition, 100);
+        });
 
         // 6. 基础样式
         const style = document.createElement('style');
         style.textContent = `
         .extern-container {
           display: flex;
-          gap: 1rem;
+          gap: 0.75rem;
           align-items: center;
+          flex-wrap: wrap;
         }
-        .extern-link {
-          color: var(--ifm-link-color);
-          padding: 0.5rem;
-          border-radius: 4px;
-          transition: opacity 0.2s;
+        
+        .desktop-ad {
+          margin-right: 1rem;
         }
-        .extern-link:hover {
-          opacity: 0.8;
-          text-decoration: none;
-        }
+        
         .mobile-ad {
           flex-direction: column;
-          padding: 1rem;
+          align-items: flex-start;
+          padding: 1rem 0.5rem;
           border-top: 1px solid var(--ifm-color-emphasis-300);
-          margin-top: auto;
+          margin-top: 1rem;
+          width: 100%;
+        }
+        
+        .mobile-ad .ad-item {
+          margin: 0.25rem 0;
+          font-size: 0.9rem;
+        }
+        
+        /* 窄屏优化 */
+        @media (max-width: 1100px) and (min-width: 996px) {
+          .desktop-ad {
+            margin-right: 0.5rem;
+          }
+          
+          .extern-container {
+            gap: 0.5rem;
+          }
+          
+          .desktop-ad .ad-item {
+            font-size: 0.85rem;
+          }
         }
       `;
         document.head.appendChild(style);
@@ -89,10 +122,16 @@ async function injectAd() {
 
 // 只在客户端执行
 if (ExecutionEnvironment.canUseDOM) {
-    injectAd()
+    // 确保DOM完全加载后再注入广告
+    if (document.readyState === 'complete') {
+        injectExternLink();
+    } else {
+        window.addEventListener('load', injectExternLink);
+    }
 }
+
 export function onRouteDidUpdate() {
     if (ExecutionEnvironment.canUseDOM) {
-        injectAd();
+        injectExternLink();
     }
 }
