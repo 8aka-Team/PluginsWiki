@@ -6,746 +6,735 @@ sidebar_position: 2
 
 :::tip
 
-这里是语言文件,对语言文件的汉化很快就会进行!
+这里是语言文件，对语言文件的汉化很快就会进行！
 
 :::
 
 
 <details>
 
-<summary>Click to view a comprehensive list of all options within Messages.YML</summary>
+<summary>点击查看 Messages.YML 内所有选项的完整列表</summary>
 
 ```yaml
 #
 #   ---------------  -  ------------------------------
-#        Section 01  |  Common Messages
+#        Section 01  |  通用消息
 #   ---------------  -  ------------------------------
 #
 common:
   prefix: '&b&lLevelledMobs:&7'
   no-permission:
-    - '%prefix% You don''t have access to that.'
+    - '%prefix% 你没有权限访问该内容。'
   players-only:
-    - '%prefix% Only players have access to that.'
+    - '%prefix% 只有玩家才能访问该内容。'
   player-offline:
-    - '%prefix% Player ''&r%player%&7'' is offline.'
+    - '%prefix% 玩家“&r%player%&7”已离线。'
   invalid-command:
-    - '%prefix% Invalid command.'
+    - '%prefix% 无效的指令。'
 
 
 #
 #   ---------------  -  ------------------------------
-#        Section 02  |  Default Command Messages
+#        Section 02  |  默认指令消息
 #   ---------------  -  ------------------------------
 #
 command:
   levelledmobs:
     main-usage:
-      - '%prefix% Available commands:'
-      - '&8 &m->&b /%label% debug &8- &7various commands relating to debugging'
-      - '&8 &m->&b /%label% egg &8- &7create spawner eggs'
-      - '&8 &m->&b /%label% help &8- &7show URL to the wiki'
-      - '&8 &m->&b /%label% info &8- &7view info about the plugin'
-      - '&8 &m->&b /%label% kill &8- &7mass kill levelled mobs'
-      - '&8 &m->&b /%label% reload &8- &7reload the configuration files'
-      - '&8 &m->&b /%label% rules &8- &7printout of the rules system'
-      - '&8 &m->&b /%label% summon &8- &7summon specific levelled mobs'
+      - '%prefix% 可用指令：'
+      - '&8 &m->&b /%label% debug &8- &7调试相关的各种指令'
+      - '&8 &m->&b /%label% egg &8- &7生成刷怪蛋'
+      - '&8 &m->&b /%label% help &8- &7显示 Wiki 的链接'
+      - '&8 &m->&b /%label% info &8- &7查看插件信息'
+      - '&8 &m->&b /%label% kill &8- &7批量击杀等级怪物'
+      - '&8 &m->&b /%label% reload &8- &7重载配置文件'
+      - '&8 &m->&b /%label% rules &8- &7打印规则系统'
+      - '&8 &m->&b /%label% summon &8- &7召唤指定等级怪物'
 
 
     #
     #   ---------------  -  ------------------------------
-    #        Section 03  |  Summon Command Messages
+    #        Section 03  |  召唤指令消息
     #   ---------------  -  ------------------------------
     #
     summon:
       invalid-amount:
-        - '%prefix% Invalid amount ''&b%amount%&7''.'
+        - '%prefix% 无效的数量“&b%amount%&7”。'
       invalid-entity-type:
-        - '%prefix% Invalid entity type ''&b%entityType%&7''.'
+        - '%prefix% 无效的实体类型“&b%entityType%&7”。'
       invalid-level:
-        - '%prefix% Invalid level ''&b%level%&7''.'
+        - '%prefix% 无效的等级“&b%level%&7”。'
       invalid-summon-type:
-        - '%prefix% Invalid summon type ''&b%summonType%&7''.'
+        - '%prefix% 无效的召唤类型“&b%summonType%&7”。'
       invalid-summon-type-console:
-        - '%prefix% Only players may use summon type ''&bhere''&7, you must use ''&batPlayer&7'' or ''&batLocation&7'' instead.'
+        - '%prefix% 只有玩家可以使用“&bhere&7”召唤类型，你必须使用“&batPlayer&7”或“&batLocation&7”。'
       invalid-location:
-        - '%prefix% Invalid location.'
+        - '%prefix% 无效的位置。'
       here:
         usage:
-          - '%prefix% Usage: &b/%label% summon <amount> <entity> <level> here'
+          - '%prefix% 用法：&b/%label% summon <数量> <实体> <等级> here'
         success:
-          - '%prefix% Spawned &b%amount%&7 of &fLvl.%level% &b%entity%(s)&7 at your location.'
+          - '%prefix% 已在你的位置生成 &b%amount%&7 个 &f等级.%level% &b%entity%&7。'
       atLocation:
         usage:
-          - '%prefix% Usage: &b/%label% summon <amount> <entity> <level> atLocation <x> <y> <z> [world]'
+          - '%prefix% 用法：&b/%label% summon <数量> <实体> <等级> atLocation <x> <y> <z> [世界]'
         success:
-          - '%prefix% Spawned &b%amount%&7 of &fLvl.%level% &b%entity%(s)&7 at &8(&b%x%&7, &b%y%&7, &b%z%&7 in world ''&b%world%&7''&8)&7.'
+          - '%prefix% 已在 &8(&b%x%&7, &b%y%&7, &b%z%&7 世界“&b%world%&7”&8)&7 生成 &b%amount%&7 个 &f等级.%level% &b%entity%&7。'
         usage-console:
-          - '%prefix% Usage (console): &b/%label% summon <amount> <entity> <level> atLocation <x> <y> <z> <world>'
+          - '%prefix% 用法（控制台）：&b/%label% summon <数量> <实体> <等级> atLocation <x> <y> <z> <世界>'
         invalid-world:
-          - '%prefix% Invalid world ''&b%world%&7''.'
+          - '%prefix% 无效的世界“&b%world%&7”。'
         invalid-location:
-          - '%prefix% Invalid location.'
+          - '%prefix% 无效的位置。'
       atPlayer:
         usage:
-          - '%prefix% Usage: &b/%label% summon <amount> <entityType> <level> atPlayer <player>'
+          - '%prefix% 用法：&b/%label% summon <数量> <实体类型> <等级> atPlayer <玩家>'
         success:
-          - '%prefix% Spawned &b%amount%&7 of &fLvl.%level% &b%entity%(s)&7 at &r%targetDisplayname%&7''s location.'
+          - '%prefix% 已在 &r%targetDisplayname%&7 的位置生成 &b%amount%&7 个 &f等级.%level% &b%entity%&7。'
       usage:
-        - '%prefix% Summon command syntax:'
-        - '&8 &m->&b /%label% summon <amount> <entity> <level> here'
-        - '&8 &m->&b /%label% summon <amount> <entity> <level> atPlayer <player>'
-        - '&8 &m->&b /%label% summon <amount> <entity> <level> atLocation <x> <y> <z> [world]'
+        - '%prefix% 召唤指令语法：'
+        - '&8 &m->&b /%label% summon <数量> <实体> <等级> here'
+        - '&8 &m->&b /%label% summon <数量> <实体> <等级> atPlayer <玩家>'
+        - '&8 &m->&b /%label% summon <数量> <实体> <等级> atLocation <x> <y> <z> [世界]'
       amount-limited:
         min:
-          - '%prefix% Summon amount limited to a minimum of &b1&7 mob.'
+          - '%prefix% 召唤数量最少为 &b1&7 个怪物。'
         max:
-          - '%prefix% Summon amount limited to a maximum of &b%maxAmount%&7 mobs.'
+          - '%prefix% 召唤数量最多为 &b%maxAmount%&7 个怪物。'
       level-limited:
         min:
-          - '%prefix% Level limited to a minimum of &bLvl.%minLevel%&7.'
+          - '%prefix% 等级最小为 &b等级.%minLevel%&7。'
         max:
-          - '%prefix% Level limited to a maximum of &bLvl.%maxLevel%&7.'
+          - '%prefix% 等级最大为 &b等级.%maxLevel%&7。'
       not-levellable:
-        - '%prefix% &b%entity%&7 is not levellable.'
+        - '%prefix% &b%entity%&7 不能被设定等级。'
 
 
     #
     #   ---------------  -  ------------------------------
-    #        Section 04  |  Kill Command Messages
+    #        Section 04  |  击杀指令消息
     #   ---------------  -  ------------------------------
     #
     kill:
       usage:
-        - '%prefix% Usage: &b/%label% kill <all/near>'
+        - '%prefix% 用法：&b/%label% kill <all/near>'
       all:
         invalid-world:
-          - '%prefix% Invalid world ''&b%world%&7''.'
+          - '%prefix% 无效的世界“&b%world%&7”。'
         success:
-          - '%prefix% Killed &b%killed%&7 levelled mobs in &b%worlds%&7 world(s) &8(&b%skipped%&7 mobs were skipped&8)&7.'
+          - '%prefix% 已在 &b%worlds%&7 个世界击杀 &b%killed%&7 个等级怪物 &8(&b%skipped%&7 个怪物被跳过&8)&7。'
         usage:
-          - '%prefix% Usage: &b/%label% kill all [world/*]'
+          - '%prefix% 用法：&b/%label% kill all [世界/*]'
         usage-console:
-          - '%prefix% Usage (console): /%label% kill all <world/*>'
+          - '%prefix% 用法（控制台）：/%label% kill all <世界/*>'
       near:
         invalid-radius:
-          - '%prefix% Invalid radius ''&b%radius%&7''.'
+          - '%prefix% 无效的半径“&b%radius%&7”。'
         invalid-radius-min:
-          - '%prefix% Specified radius has been adjusted to the minimum radius &8(&b%minRadius%&8)&7.'
+          - '%prefix% 指定半径已调整为最小半径 &8(&b%minRadius%&8)&7。'
         invalid-radius-max:
-          - '%prefix% Specified radius has been adjusted to the maximum radius &8(&b%maxRadius%&8)&7.'
+          - '%prefix% 指定半径已调整为最大半径 &8(&b%maxRadius%&8)&7。'
         success:
-          - '%prefix% Killed &b%killed%&7 levelled mobs within a radius of &b%radius%&7 block(s) &8(&b%skipped%&7 mobs were skipped&8)&7.'
+          - '%prefix% 已在半径 &b%radius%&7 格内击杀 &b%killed%&7 个等级怪物 &8(&b%skipped%&7 个怪物被跳过&8)&7。'
         usage:
-          - '%prefix% Usage: &b/%label% kill near <radius>'
+          - '%prefix% 用法：&b/%label% kill near <半径>'
 
 
     #
     #   ---------------  -  ------------------------------
-    #        Section 05  |  Spawner Command Messages
+    #        Section 05  |  刷怪笼指令消息
     #   ---------------  -  ------------------------------
     #
     spawner:
       usage:
-        - '%prefix% Spawner command syntax:'
+        - '%prefix% 刷怪笼指令语法：'
         - '&8 &m->&b /%label% spawner create'
         - '&8 &m->&b /%label% spawner copy'
         - '&8 &m->&b /%label% spawner info'
         - ' '
-        - '&fSample syntax:'
-        - '&8 &m->&b /%label% spawner create &3/minlevel&b 1 &3/maxlevel&b 10 &3/name&b "My customized LM spawner" &3/customDropId&b Id1'
+        - '&f示例语法：'
+        - '&8 &m->&b /%label% spawner create &3/minlevel&b 1 &3/maxlevel&b 10 &3/name&b "自定义LM刷怪笼" &3/customDropId&b Id1'
       no-value:
-        - '%prefix% No value was specified for key ''&b%keyname%&7''.'
+        - '%prefix% 未为键“&b%keyname%&7”指定值。'
       no-player:
-        - '%prefix% Command can only be run by a player unless the &b/giveplayer&7 parameter is specified.'
+        - '%prefix% 只有玩家可执行该指令，除非指定了 &b/giveplayer&7 参数。'
       invalid-value:
-        - '%prefix% Invalid value for &b%keyname%&7, must be a number.'
+        - '%prefix% &b%keyname%&7 的值无效，必须为数字。'
       no-level-specified:
-        - '%prefix% You must specify minLevel and/or maxLevel.'
+        - '%prefix% 你必须指定 minLevel 和/或 maxLevel。'
       inventory-full:
-        - '%prefix% Your inventory is full.'
+        - '%prefix% 你的背包已满。'
       spawner-give-message:
-        - '%prefix% Gave you a LM spawner.'
+        - '%prefix% 已给予你一个LM刷怪笼。'
       spawner-give-message-console:
-        - '%prefix% Gave &r%playername%&7 a LM spawner. &8|&7 minLevel: &b%minlevel%&7, maxLevel: &b%maxlevel%&7'
+        - '%prefix% 已给予 &r%playername%&7 一个LM刷怪笼。&8|&7 最小等级: &b%minlevel%&7, 最大等级: &b%maxlevel%&7'
       permission-denied:
-        - '%prefix% You don''t have permission to update or convert a LM spawner.'
+        - '%prefix% 你没有权限更新或转换LM刷怪笼。'
       spawner-converted:
-        - '%prefix% Converted vanilla spawner into a LM spawner with name "%spawnername%".'
+        - '%prefix% 已将原版刷怪笼转换为名为“%spawnername%”的LM刷怪笼。'
       spawner-updated:
-        - '%prefix% Updated LM spawner from spawn egg. Spawner name: "%spawnername%"'
+        - '%prefix% 已通过刷怪蛋更新LM刷怪笼。刷怪笼名称：“%spawnername%”'
       info:
         status-enabled:
-          - '%prefix% Spawner info is &aenabled&f.'
+          - '%prefix% 刷怪笼信息已&a启用&f。'
         status-not-enabled:
-          - '%prefix% Spawner info is &cnot enabled&f.'
+          - '%prefix% 刷怪笼信息已&c禁用&f。'
         enabled:
-          - '%prefix% Spawner info is &aenabled&f. Right-Click any Spawner for details!'
+          - '%prefix% 刷怪笼信息已&a启用&f。右键任意刷怪笼查看详情！'
         disabled:
-          - '%prefix% Spawner info has been &cdisabled&f.'
+          - '%prefix% 刷怪笼信息已&c禁用&f。'
       copy:
         vanilla-spawner:
-          - '%prefix% Spawner copy only works with LM spawners.'
+          - '%prefix% 仅LM刷怪笼可复制。'
         status-enabled:
-          - '%prefix% Spawner copy is &aenabled&f.'
+          - '%prefix% 刷怪笼复制已&a启用&f。'
         status-not-enabled:
-          - '%prefix% Spawner copy is &cnot enabled&f.'
+          - '%prefix% 刷怪笼复制已&c禁用&f。'
         enabled:
-          - '%prefix% Spawner copy is &aenabled&f. Right-Click a LM Spawner to make a copy.'
-          - 'Your hand must be empty.'
+          - '%prefix% 刷怪笼复制已&a启用&f。右键LM刷怪笼进行复制。'
+          - '你的手必须为空。'
         disabled:
-          - '%prefix% Spawner copy has been &cdisabled&f.'
+          - '%prefix% 刷怪笼复制已&c禁用&f。'
 
 
     #
     #   ---------------  -  ------------------------------
-    #        Section 06  |  Spawn Egg Command Messages
+    #        Section 06  |  刷怪蛋指令消息
     #   ---------------  -  ------------------------------
     #
     spawn_egg:
       usage:
-        - '%prefix% egg command syntax:'
-        - '&8 &m->&b /%label% egg /minlevel <level> /maxlevel <level> /entity <entity type>'
-        - '&7&o Sample Spawn Egg'
-        - '&7/%label% egg &b/minlevel&7 1 &b/maxlevel&7 10 &b/name&7 "My customized LM spawn egg" &b/customDropId&7 Id1'
+        - '%prefix% egg 指令语法：'
+        - '&8 &m->&b /%label% egg /minlevel <等级> /maxlevel <等级> /entity <实体类型>'
+        - '&7&o 示例刷怪蛋'
+        - '&7/%label% egg &b/minlevel&7 1 &b/maxlevel&7 10 &b/name&7 "自定义LM刷怪蛋" &b/customDropId&7 Id1'
       no-paper:
-        - '%prefix% This feature is only available on servers running Paper or forks of Paper'
+        - '%prefix% 此功能仅在运行Paper或其分支的服务器上可用'
       no-value:
-        - '%prefix% No value was specified for: &b%keyname%&7'
+        - '%prefix% 未为 &b%keyname%&7 指定值'
       no-player:
-        - '%prefix% Command can only be run by a player unless /giveplayer is specified'
+        - '%prefix% 只有玩家可执行该指令，除非指定 /giveplayer'
       no-player-specified:
-        - '%prefix% No player was specified'
+        - '%prefix% 未指定玩家'
       invalid-value:
-        - '%prefix% Invalid value for &b%keyname%&7, must be a number'
+        - '%prefix% &b%keyname%&7 的值无效，必须为数字'
       no-level-specified:
-        - '%prefix% You must specify minLevel, maxLevel and entity'
+        - '%prefix% 你必须指定 minLevel、maxLevel 和实体'
       inventory-full:
-        - '%prefix% &4Your inventory is full!'
+        - '%prefix% &4你的背包已满！'
       give-message:
-        - '%prefix% Gave you a LM spawn egg'
+        - '%prefix% 已给予你一个LM刷怪蛋'
       give-message-console:
-        - '%prefix% Gave &r%playername%&7 a LM spawn egg. &8|&7 minLevel: &b%minlevel%&7, maxLevel: &b%maxlevel%&7, entity: &b%entitytype%&7'
+        - '%prefix% 已给予 &r%playername%&7 一个LM刷怪蛋。&8|&7 最小等级: &b%minlevel%&7, 最大等级: &b%maxlevel%&7, 实体: &b%entitytype%&7'
 
 
     #
     #   ---------------  -  ------------------------------
-    #        Section 07  |  Rules Command Messages
+    #        Section 07  |  规则指令消息
     #   ---------------  -  ------------------------------
     #
     rules:
       incomplete-command:
-        - '%prefix% Incomplete command'
+        - '%prefix% 指令不完整'
       console-rules:
-        - '%prefix% Rules have been printed on the console'
+        - '%prefix% 规则已打印到控制台'
       discord-invite:
-        - '%prefix% Click for Discord invite'
+        - '%prefix% 点击获取Discord邀请'
       wiki-link:
-        - '%prefix% Click to open the wiki'
+        - '%prefix% 点击打开Wiki'
       rules-reprocessed:
-        - '%prefix% Rules Reprocessed for &b%entitycount%&7 mobs in &b%worldcount%&7 world(s)'
+        - '%prefix% 已为 &b%worldcount%&7 个世界的 &b%entitycount%&7 个怪物重新处理规则'
       reset:
-        - '%prefix% Running this command will reset your rules to one of 4 defaults.'
-        - 'You must select if you want vanilla/basic/average/advanced/extreme difficulty.'
-        - 'A backup will be made and your rules.yml reset to default.'
+        - '%prefix% 执行此指令将重置你的规则为4种默认之一。'
+        - '你必须选择 vanilla/basic/average/advanced/extreme 难度。'
+        - '将自动备份并重置 rules.yml 为默认。'
       resetting:
-        - '%prefix% Resetting rules to %difficulty%'
+        - '%prefix% 正在重置规则为 %difficulty%'
       reset-syntax:
-        - '%prefix% To reset your rules to %difficulty% difficulty, type in the following command:'
+        - '%prefix% 若要重置为 %difficulty% 难度，请输入以下指令：'
         - '%label% rules reset %difficulty% confirm'
       reset-complete:
-        - '%prefix% rules.yml updated successfully'
+        - '%prefix% rules.yml 已成功更新'
       invalid-difficulty:
-        - '%prefix% Invalid difficulty: %difficulty%'
+        - '%prefix% 无效的难度：%difficulty%'
       rule-name-missing:
-        - '%prefix% Must specify a rule name.'
+        - '%prefix% 必须指定规则名称。'
       rule-name-invalid:
-        - '%prefix% No rule was found with name %rulename%'
+        - '%prefix% 未找到名为 %rulename% 的规则'
       showing-rules:
-        - 'Showing all values for rule: &b%rulename%&r'
+        - '显示规则所有值：&b%rulename%&r'
       no-entities-visible:
-        - '%prefix% Must be looking at a nearby entity'
+        - '%prefix% 必须看向附近的实体'
       no-entities-near:
-        - '%prefix% No entities were found within a 10 block radius'
+        - '%prefix% 10格范围内未找到实体'
       effective-rules:
-        - '%prefix% Showing effective rules for: %entitytype% (lvl %level% %mobname%) in %world%, %location%'
+        - '%prefix% 显示有效规则：%entitytype%（等级 %level% %mobname%）于 %world%，%location%'
       no-effective-rules:
-        - '%prefix% No effective rules were found'
+        - '%prefix% 未找到有效规则'
+
 
     #
     #   ---------------  -  ------------------------------
-    #        Section 08  |  System Command Messages
+    #        Section 08  |  系统指令消息
     #   ---------------  -  ------------------------------
     #
     reload:
       started:
-        - '%prefix% Reloading configuration files...'
+        - '%prefix% 正在重载配置文件……'
       finished:
-        - '%prefix% Reload complete.'
+        - '%prefix% 重载完成。'
       usage:
-        - '%prefix% Usage: &b/%label% reload'
+        - '%prefix% 用法：&b/%label% reload'
     info:
       about:
         - ' '
         - '&b&lLevelledMobs&b v%version%'
         - '&7&o%description%'
         - ' '
-        - '&7Maintainers: &f%maintainers%'
-        - '&7Contributors: &f%contributors%'
-        - '&7Support for: &fMC &f%supportedVersions%'
+        - '&7维护者：&f%maintainers%'
+        - '&7贡献者：&f%contributors%'
+        - '&7支持：&fMC &f%supportedVersions%'
         - ' '
       listSeparator: '&7, &f'
       usage:
-        - '%prefix% Usage: &b/%label% info'
+        - '%prefix% 用法：&b/%label% info'
     compatibility:
       notice:
-        - '%prefix% Compatibility checks have been printed to your logs. Please check the console :)'
+        - '%prefix% 兼容性检查结果已打印到日志，请检查控制台 :)'
       usage:
-        - '%prefix% Usage: &b/%label% compatibility'
+        - '%prefix% 用法：&b/%label% compatibility'
 
 
 #
 #   ---------------  -  ------------------------------
-#        Section 09  |  Other Messages
+#        Section 09  |  其他消息
 #   ---------------  -  ------------------------------
 #
 other:
   compatibility-notice:
     enabled: true
     messages:
-      - '%prefix% LevelledMobs compatibility notice:'
-      - '&8 &m->&r &b%incompatibilities% &7possible incompatibilities were found. Please run ''&b/levelledmobs compatibility&7'' to check them.'
-      - '&8 &m->&7 This message is sent as you have the permission &blevelledmobs.compatibility-notice&7. You can disable this message in &bmessages.yml&7.'
-      - '&8 &m->&7 Please ensure you have followed all instructions on the plugin''s Wiki page.'
+      - '%prefix% LevelledMobs 兼容性提示：'
+      - '&8 &m->&r &b%incompatibilities% &7个可能的不兼容项被发现。请运行“&b/levelledmobs compatibility&7”进行检查。'
+      - '&8 &m->&7 此消息因你拥有 &blevelledmobs.compatibility-notice&7 权限而发送。你可以在 &bmessages.yml&7 中关闭此消息。'
+      - '&8 &m->&7 请确保你已按照插件Wiki页面的所有说明操作。'
   update-notice:
     messages:
-      - '&b&nLevelledMobs Update Checker Notice:'
-      - '&7Your &bLevelledMobs&7 version is &boutdated&7! Please update to &bv%latestVersion%&7 as soon as possible. &8(&7You''re running &bv%currentVersion%&8)'
+      - '&b&nLevelledMobs 更新检查提示：'
+      - '&7你的 &bLevelledMobs&7 版本已&boutdated&7！请尽快更新到 &bv%latestVersion%&7。&8(&7你当前运行的是 &bv%currentVersion%&8)'
     send-in-console: true
     send-on-join: true
 
-  mob-head-drop-name: '%mob_name%''s head'
-  no-drop-in-chunk: '%prefix% &7Your levelled mob kill count has reached the maximum for this area. You will no longer receive levelled drops from these mobs. Please come back after a while.'
+  mob-head-drop-name: '%mob_name%的头颅'
+  no-drop-in-chunk: '%prefix% &7你在该区域击杀的等级怪物数量已达上限，将不再获得等级掉落。请稍后再来。'
   create-debug:
-    - '&b&nCreate a Debugging ZIP'
-    - '&7You should only run this command if a LevelledMobs developer has asked you to. It is used to assist users who are experiencing issues with the plugin.'
+    - '&b&n创建调试ZIP'
+    - '&7仅当LevelledMobs开发者要求时才应运行此命令。用于协助遇到插件问题的用户。'
     - ''
-    - '&7This command will generate a ZIP file containing the following required data:'
-    - '&8 &m->&b Plugins list'
-    - '&8 &m->&b Server version'
-    - '&8 &m->&b Current and maximum online player count'
-    - '&8 &m->&b The latest.log file&7 &8(/logs/latest.log)'
+    - '&7此命令将生成包含以下必要数据的ZIP文件：'
+    - '&8 &m->&b 插件列表'
+    - '&8 &m->&b 服务器版本'
+    - '&8 &m->&b 当前及最大在线玩家数'
+    - '&8 &m->&b latest.log 文件&7 &8(/logs/latest.log)'
     - ''
-    - '&7LevelledMobs developers will not redistribute or retain the data beyond the purpose of resolving any issue you may be experiencing. You may also verify the contents prior to sending the file.'
-    - '&7To proceed in creating the ZIP file, please run:'
+    - '&7LevelledMobs开发者不会为除解决问题外的目的分发或保留数据。你可在发送前自行核查内容。'
+    - '&7如需继续创建ZIP文件，请运行：'
     - '&b/lm debug create-zip confirm&7'
 ```
 
 </details>
 
-LevelledMobs' `messages.yml` file allows you to customise all of the chat messages that are sent from the plugin. You can visit the Official Translations to fine easy to swap translations of this file in Español (Spanish), Deutsch (German), and Français (French) \[COMING SOON]!
+LevelledMobs 的 `messages.yml` 文件允许你自定义插件发送的所有聊天消息。你可以访问官方翻译，轻松切换为西班牙语（Español）、德语（Deutsch）等语言版本，法语（Français）即将推出！
 
-#### Warnings:
+#### 警告：
 
-> **Most placeholders only work in certain messages.**\
-> Usually, if a placeholder is not included in a message by default, it will not be processed in it.\
+> **大多数占位符仅在特定消息中可用。**\
+> 通常，如果某条消息默认未包含某占位符，则该占位符不会被处理。\
 > \
-> For this reason, you may find it useful to reference the default messages.yml file if you are unsure which placeholders are supported in one or more messages in the file.\
+> 因此，如果你不确定某些消息支持哪些占位符，建议参考默认的 messages.yml 文件。\
 > \
-> For example, you will not be able to use the `%supportedVersions%` placeholder in the 'no permission' message.
+> 例如，你无法在“无权限”消息中使用 `%supportedVersions%` 占位符。
 
 <details>
 
-<summary>Click to view a list of all options within Section 1 - Common Messages</summary>
+<summary>点击查看 Section 1 - 通用消息 的所有选项</summary>
 
 ```yaml
 common:
   prefix: '&b&lLevelledMobs:&7'
   no-permission:
-    - '%prefix% You don''t have access to that.'
+    - '%prefix% 你没有权限访问该内容。'
   players-only:
-    - '%prefix% Only players have access to that.'
+    - '%prefix% 只有玩家才能访问该内容。'
   player-offline:
-    - '%prefix% Player ''&r%player%&7'' is offline.'
+    - '%prefix% 玩家“&r%player%&7”已离线。'
   invalid-command:
-    - '%prefix% Invalid command.'
+    - '%prefix% 无效的指令。'
 ```
 
 </details>
 
 <details>
 
-<summary>Click to view a list of all options within Section 2 - Default Command Messages</summary>
+<summary>点击查看 Section 2 - 默认指令消息 的所有选项</summary>
 
 ```yaml
 #
 #   ---------------  -  ------------------------------
-#        Section 02  |  Default Command Messages
+#        Section 02  |  默认指令消息
 #   ---------------  -  ------------------------------
 #
 command:
   levelledmobs:
     main-usage:
-      - '%prefix% Available commands:'
-      - '&8 &m->&b /%label% debug &8- &7various commands relating to debugging'
-      - '&8 &m->&b /%label% egg &8- &7create spawner eggs'
-      - '&8 &m->&b /%label% help &8- &7show URL to the wiki'
-      - '&8 &m->&b /%label% info &8- &7view info about the plugin'
-      - '&8 &m->&b /%label% kill &8- &7mass kill levelled mobs'
-      - '&8 &m->&b /%label% reload &8- &7reload the configuration files'
-      - '&8 &m->&b /%label% rules &8- &7printout of the rules system'
-      - '&8 &m->&b /%label% summon &8- &7summon specific levelled mobs'
+      - '%prefix% 可用指令：'
+      - '&8 &m->&b /%label% debug &8- &7调试相关的各种指令'
+      - '&8 &m->&b /%label% egg &8- &7生成刷怪蛋'
+      - '&8 &m->&b /%label% help &8- &7显示 Wiki 的链接'
+      - '&8 &m->&b /%label% info &8- &7查看插件信息'
+      - '&8 &m->&b /%label% kill &8- &7批量击杀等级怪物'
+      - '&8 &m->&b /%label% reload &8- &7重载配置文件'
+      - '&8 &m->&b /%label% rules &8- &7打印规则系统'
+      - '&8 &m->&b /%label% summon &8- &7召唤指定等级怪物'
 ```
 
 </details>
 
 <details>
 
-<summary>Click to view a list of all options within Section 3 - Summon Command Messages</summary>
+<summary>点击查看 Section 3 - 召唤指令消息 的所有选项</summary>
 
 ```yaml
 #
 #   ---------------  -  ------------------------------
-#        Section 03  |  Summon Command Messages
+#        Section 03  |  召唤指令消息
 #   ---------------  -  ------------------------------
 #
     summon:
       invalid-amount:
-        - '%prefix% Invalid amount ''&b%amount%&7''.'
+        - '%prefix% 无效的数量“&b%amount%&7”。'
       invalid-entity-type:
-        - '%prefix% Invalid entity type ''&b%entityType%&7''.'
+        - '%prefix% 无效的实体类型“&b%entityType%&7”。'
       invalid-level:
-        - '%prefix% Invalid level ''&b%level%&7''.'
+        - '%prefix% 无效的等级“&b%level%&7”。'
       invalid-summon-type:
-        - '%prefix% Invalid summon type ''&b%summonType%&7''.'
+        - '%prefix% 无效的召唤类型“&b%summonType%&7”。'
       invalid-summon-type-console:
-        - '%prefix% Only players may use summon type ''&bhere''&7, you must use ''&batPlayer&7'' or ''&batLocation&7'' instead.'
+        - '%prefix% 只有玩家可以使用“&bhere&7”召唤类型，你必须使用“&batPlayer&7”或“&batLocation&7”。'
       invalid-location:
-        - '%prefix% Invalid location.'
+        - '%prefix% 无效的位置。'
       here:
         usage:
-          - '%prefix% Usage: &b/%label% summon <amount> <entity> <level> here'
+          - '%prefix% 用法：&b/%label% summon <数量> <实体> <等级> here'
         success:
-          - '%prefix% Spawned &b%amount%&7 of &fLvl.%level% &b%entity%(s)&7 at your location.'
+          - '%prefix% 已在你的位置生成 &b%amount%&7 个 &f等级.%level% &b%entity%&7。'
       atLocation:
         usage:
-          - '%prefix% Usage: &b/%label% summon <amount> <entity> <level> atLocation <x> <y> <z> [world]'
+          - '%prefix% 用法：&b/%label% summon <数量> <实体> <等级> atLocation <x> <y> <z> [世界]'
         success:
-          - '%prefix% Spawned &b%amount%&7 of &fLvl.%level% &b%entity%(s)&7 at &8(&b%x%&7, &b%y%&7, &b%z%&7 in world ''&b%world%&7''&8)&7.'
+          - '%prefix% 已在 &8(&b%x%&7, &b%y%&7, &b%z%&7 世界“&b%world%&7”&8)&7 生成 &b%amount%&7 个 &f等级.%level% &b%entity%&7。'
         usage-console:
-          - '%prefix% Usage (console): &b/%label% summon <amount> <entity> <level> atLocation <x> <y> <z> <world>'
+          - '%prefix% 用法（控制台）：&b/%label% summon <数量> <实体> <等级> atLocation <x> <y> <z> <世界>'
         invalid-world:
-          - '%prefix% Invalid world ''&b%world%&7''.'
+          - '%prefix% 无效的世界“&b%world%&7”。'
         invalid-location:
-          - '%prefix% Invalid location.'
+          - '%prefix% 无效的位置。'
       atPlayer:
         usage:
-          - '%prefix% Usage: &b/%label% summon <amount> <entityType> <level> atPlayer <player>'
+          - '%prefix% 用法：&b/%label% summon <数量> <实体类型> <等级> atPlayer <玩家>'
         success:
-          - '%prefix% Spawned &b%amount%&7 of &fLvl.%level% &b%entity%(s)&7 at &r%targetDisplayname%&7''s location.'
+          - '%prefix% 已在 &r%targetDisplayname%&7 的位置生成 &b%amount%&7 个 &f等级.%level% &b%entity%&7。'
       usage:
-        - '%prefix% Summon command syntax:'
-        - '&8 &m->&b /%label% summon <amount> <entity> <level> here'
-        - '&8 &m->&b /%label% summon <amount> <entity> <level> atPlayer <player>'
-        - '&8 &m->&b /%label% summon <amount> <entity> <level> atLocation <x> <y> <z> [world]'
+        - '%prefix% 召唤指令语法：'
+        - '&8 &m->&b /%label% summon <数量> <实体> <等级> here'
+        - '&8 &m->&b /%label% summon <数量> <实体> <等级> atPlayer <玩家>'
+        - '&8 &m->&b /%label% summon <数量> <实体> <等级> atLocation <x> <y> <z> [世界]'
       amount-limited:
         min:
-          - '%prefix% Summon amount limited to a minimum of &b1&7 mob.'
+          - '%prefix% 召唤数量最少为 &b1&7 个怪物。'
         max:
-          - '%prefix% Summon amount limited to a maximum of &b%maxAmount%&7 mobs.'
+          - '%prefix% 召唤数量最多为 &b%maxAmount%&7 个怪物。'
       level-limited:
         min:
-          - '%prefix% Level limited to a minimum of &bLvl.%minLevel%&7.'
+          - '%prefix% 等级最小为 &b等级.%minLevel%&7。'
         max:
-          - '%prefix% Level limited to a maximum of &bLvl.%maxLevel%&7.'
+          - '%prefix% 等级最大为 &b等级.%maxLevel%&7。'
       not-levellable:
-        - '%prefix% &b%entity%&7 is not levellable.'
-ix% Usage (console): /%label% kill all <world/*>'
-      near:
-        invalid-radius:
-          - '%prefix% Invalid radius ''&b%radius%&7''.'
-        invalid-radius-min:
-          - '%prefix% Specified radius has been adjusted to the minimum radius &8(&b%minRadius%&8)&7.'
-        invalid-radius-max:
-          - '%prefix% Specified radius has been adjusted to the maximum radius &8(&b%maxRadius%&8)&7.'
-        success:
-          - '%prefix% Killed &b%killed%&7 levelled mobs within a radius of &b%radius%&7 block(s) &8(&b%skipped%&7 mobs were skipped&8)&7.'
-        usage:
-          - '%prefix% Usage: &b/%label% kill near <radius>'
+        - '%prefix% &b%entity%&7 不能被设定等级。'
 ```
 
 </details>
 
 <details>
 
-<summary>Click to view a list of all options within Section 4 - Kill Command Messages</summary>
+<summary>点击查看 Section 4 - 击杀指令消息 的所有选项</summary>
 
 ```yaml
 #
 #   ---------------  -  ------------------------------
-#        Section 04  |  Kill Command Messages
+#        Section 04  |  击杀指令消息
 #   ---------------  -  ------------------------------
 #
     kill:
       usage:
-        - '%prefix% Usage: &b/%label% kill <all/near>'
+        - '%prefix% 用法：&b/%label% kill <all/near>'
       all:
         invalid-world:
-          - '%prefix% Invalid world ''&b%world%&7''.'
+          - '%prefix% 无效的世界“&b%world%&7”。'
         success:
-          - '%prefix% Killed &b%killed%&7 levelled mobs in &b%worlds%&7 world(s) &8(&b%skipped%&7 mobs were skipped&8)&7.'
+          - '%prefix% 已在 &b%worlds%&7 个世界击杀 &b%killed%&7 个等级怪物 &8(&b%skipped%&7 个怪物被跳过&8)&7。'
         usage:
-          - '%prefix% Usage: &b/%label% kill all [world/*]'
+          - '%prefix% 用法：&b/%label% kill all [世界/*]'
         usage-console:
-          - '%prefix% Usage (console): /%label% kill all <world/*>'
+          - '%prefix% 用法（控制台）：/%label% kill all <世界/*>'
       near:
         invalid-radius:
-          - '%prefix% Invalid radius ''&b%radius%&7''.'
+          - '%prefix% 无效的半径“&b%radius%&7”。'
         invalid-radius-min:
-          - '%prefix% Specified radius has been adjusted to the minimum radius &8(&b%minRadius%&8)&7.'
+          - '%prefix% 指定半径已调整为最小半径 &8(&b%minRadius%&8)&7。'
         invalid-radius-max:
-          - '%prefix% Specified radius has been adjusted to the maximum radius &8(&b%maxRadius%&8)&7.'
+          - '%prefix% 指定半径已调整为最大半径 &8(&b%maxRadius%&8)&7。'
         success:
-          - '%prefix% Killed &b%killed%&7 levelled mobs within a radius of &b%radius%&7 block(s) &8(&b%skipped%&7 mobs were skipped&8)&7.'
+          - '%prefix% 已在半径 &b%radius%&7 格内击杀 &b%killed%&7 个等级怪物 &8(&b%skipped%&7 个怪物被跳过&8)&7。'
         usage:
-          - '%prefix% Usage: &b/%label% kill near <radius>'
+          - '%prefix% 用法：&b/%label% kill near <半径>'
 ```
 
 </details>
 
 <details>
 
-<summary>Click to view a list of all options within Section 5 - Spawner Command Messages</summary>
+<summary>点击查看 Section 5 - 刷怪笼指令消息 的所有选项</summary>
 
 ```yaml
 #
 #   ---------------  -  ------------------------------
-#        Section 05  |  Spawner Command Messages
+#        Section 05  |  刷怪笼指令消息
 #   ---------------  -  ------------------------------
 #
     spawner:
       usage:
-        - '%prefix% Spawner command syntax:'
+        - '%prefix% 刷怪笼指令语法：'
         - '&8 &m->&b /%label% spawner create'
         - '&8 &m->&b /%label% spawner copy'
         - '&8 &m->&b /%label% spawner info'
         - ' '
-        - '&fSample syntax:'
-        - '&8 &m->&b /%label% spawner create &3/minlevel&b 1 &3/maxlevel&b 10 &3/name&b "My customized LM spawner" &3/customDropId&b Id1'
+        - '&f示例语法：'
+        - '&8 &m->&b /%label% spawner create &3/minlevel&b 1 &3/maxlevel&b 10 &3/name&b "自定义LM刷怪笼" &3/customDropId&b Id1'
       no-value:
-        - '%prefix% No value was specified for key ''&b%keyname%&7''.'
+        - '%prefix% 未为键“&b%keyname%&7”指定值。'
       no-player:
-        - '%prefix% Command can only be run by a player unless the &b/giveplayer&7 parameter is specified.'
+        - '%prefix% 只有玩家可执行该指令，除非指定了 &b/giveplayer&7 参数。'
       invalid-value:
-        - '%prefix% Invalid value for &b%keyname%&7, must be a number.'
+        - '%prefix% &b%keyname%&7 的值无效，必须为数字。'
       no-level-specified:
-        - '%prefix% You must specify minLevel and/or maxLevel.'
+        - '%prefix% 你必须指定 minLevel 和/或 maxLevel。'
       inventory-full:
-        - '%prefix% Your inventory is full.'
+        - '%prefix% 你的背包已满。'
       spawner-give-message:
-        - '%prefix% Gave you a LM spawner.'
+        - '%prefix% 已给予你一个LM刷怪笼。'
       spawner-give-message-console:
-        - '%prefix% Gave &r%playername%&7 a LM spawner. &8|&7 minLevel: &b%minlevel%&7, maxLevel: &b%maxlevel%&7'
+        - '%prefix% 已给予 &r%playername%&7 一个LM刷怪笼。&8|&7 最小等级: &b%minlevel%&7, 最大等级: &b%maxlevel%&7'
       permission-denied:
-        - '%prefix% You don''t have permission to update or convert a LM spawner.'
+        - '%prefix% 你没有权限更新或转换LM刷怪笼。'
       spawner-converted:
-        - '%prefix% Converted vanilla spawner into a LM spawner with name "%spawnername%".'
+        - '%prefix% 已将原版刷怪笼转换为名为“%spawnername%”的LM刷怪笼。'
       spawner-updated:
-        - '%prefix% Updated LM spawner from spawn egg. Spawner name: "%spawnername%"'
+        - '%prefix% 已通过刷怪蛋更新LM刷怪笼。刷怪笼名称：“%spawnername%”'
       info:
         status-enabled:
-          - '%prefix% Spawner info is &aenabled&f.'
+          - '%prefix% 刷怪笼信息已&a启用&f。'
         status-not-enabled:
-          - '%prefix% Spawner info is &cnot enabled&f.'
+          - '%prefix% 刷怪笼信息已&c禁用&f。'
         enabled:
-          - '%prefix% Spawner info is &aenabled&f. Right-Click any Spawner for details!'
+          - '%prefix% 刷怪笼信息已&a启用&f。右键任意刷怪笼查看详情！'
         disabled:
-          - '%prefix% Spawner info has been &cdisabled&f.'
+          - '%prefix% 刷怪笼信息已&c禁用&f。'
       copy:
         vanilla-spawner:
-          - '%prefix% Spawner copy only works with LM spawners.'
+          - '%prefix% 仅LM刷怪笼可复制。'
         status-enabled:
-          - '%prefix% Spawner copy is &aenabled&f.'
+          - '%prefix% 刷怪笼复制已&a启用&f。'
         status-not-enabled:
-          - '%prefix% Spawner copy is &cnot enabled&f.'
+          - '%prefix% 刷怪笼复制已&c禁用&f。'
         enabled:
-          - '%prefix% Spawner copy is &aenabled&f. Right-Click a LM Spawner to make a copy.'
-          - 'Your hand must be empty.'
+          - '%prefix% 刷怪笼复制已&a启用&f。右键LM刷怪笼进行复制。'
+          - '你的手必须为空。'
         disabled:
-          - '%prefix% Spawner copy has been &cdisabled&f.'
+          - '%prefix% 刷怪笼复制已&c禁用&f。'
 ```
 
 </details>
 
 <details>
 
-<summary>Click to view a list of all options within Section 6 - Spawn Egg Command Messages</summary>
+<summary>点击查看 Section 6 - 刷怪蛋指令消息 的所有选项</summary>
 
 ```yaml
 #
 #   ---------------  -  ------------------------------
-#        Section 06  |  Spawn Egg Command Messages
+#        Section 06  |  刷怪蛋指令消息
 #   ---------------  -  ------------------------------
 #
     spawn_egg:
       usage:
-        - '%prefix% egg command syntax:'
-        - '&8 &m->&b /%label% egg /minlevel <level> /maxlevel <level> /entity <entity type>'
-        - '&7&o Sample Spawn Egg'
-        - '&7/%label% egg &b/minlevel&7 1 &b/maxlevel&7 10 &b/name&7 "My customized LM spawn egg" &b/customDropId&7 Id1'
+        - '%prefix% egg 指令语法：'
+        - '&8 &m->&b /%label% egg /minlevel <等级> /maxlevel <等级> /entity <实体类型>'
+        - '&7&o 示例刷怪蛋'
+        - '&7/%label% egg &b/minlevel&7 1 &b/maxlevel&7 10 &b/name&7 "自定义LM刷怪蛋" &b/customDropId&7 Id1'
       no-paper:
-        - '%prefix% This feature is only available on servers running Paper or forks of Paper'
+        - '%prefix% 此功能仅在运行Paper或其分支的服务器上可用'
       no-value:
-        - '%prefix% No value was specified for: &b%keyname%&7'
+        - '%prefix% 未为 &b%keyname%&7 指定值'
       no-player:
-        - '%prefix% Command can only be run by a player unless /giveplayer is specified'
+        - '%prefix% 只有玩家可执行该指令，除非指定 /giveplayer'
       no-player-specified:
-        - '%prefix% No player was specified'
+        - '%prefix% 未指定玩家'
       invalid-value:
-        - '%prefix% Invalid value for &b%keyname%&7, must be a number'
+        - '%prefix% &b%keyname%&7 的值无效，必须为数字'
       no-level-specified:
-        - '%prefix% You must specify minLevel, maxLevel and entity'
+        - '%prefix% 你必须指定 minLevel、maxLevel 和实体'
       inventory-full:
-        - '%prefix% &4Your inventory is full!'
+        - '%prefix% &4你的背包已满！'
       give-message:
-        - '%prefix% Gave you a LM spawn egg'
+        - '%prefix% 已给予你一个LM刷怪蛋'
       give-message-console:
-        - '%prefix% Gave &r%playername%&7 a LM spawn egg. &8|&7 minLevel: &b%minlevel%&7, maxLevel: &b%maxlevel%&7, entity: &b%entitytype%&7'
+        - '%prefix% 已给予 &r%playername%&7 一个LM刷怪蛋。&8|&7 最小等级: &b%minlevel%&7, 最大等级: &b%maxlevel%&7, 实体: &b%entitytype%&7'
 ```
 
 </details>
 
 <details>
 
-<summary>Click to view a list of all options within Section 7 - Rules Command Messages</summary>
+<summary>点击查看 Section 7 - 规则指令消息 的所有选项</summary>
 
 ```yaml
 #
 #   ---------------  -  ------------------------------
-#        Section 07  |  Rules Command Messages
+#        Section 07  |  规则指令消息
 #   ---------------  -  ------------------------------
 #
     rules:
       incomplete-command:
-        - '%prefix% Incomplete command'
+        - '%prefix% 指令不完整'
       console-rules:
-        - '%prefix% Rules have been printed on the console'
+        - '%prefix% 规则已打印到控制台'
       discord-invite:
-        - '%prefix% Click for Discord invite'
+        - '%prefix% 点击获取Discord邀请'
       wiki-link:
-        - '%prefix% Click to open the wiki'
+        - '%prefix% 点击打开Wiki'
       rules-reprocessed:
-        - '%prefix% Rules Reprocessed for &b%entitycount%&7 mobs in &b%worldcount%&7 world(s)'
+        - '%prefix% 已为 &b%worldcount%&7 个世界的 &b%entitycount%&7 个怪物重新处理规则'
       reset:
-        - '%prefix% Running this command will reset your rules to one of 4 defaults.'
-        - 'You must select if you want vanilla/basic/average/advanced/extreme difficulty.'
-        - 'A backup will be made and your rules.yml reset to default.'
+        - '%prefix% 执行此指令将重置你的规则为4种默认之一。'
+        - '你必须选择 vanilla/basic/average/advanced/extreme 难度。'
+        - '将自动备份并重置 rules.yml 为默认。'
       resetting:
-        - '%prefix% Resetting rules to %difficulty%'
+        - '%prefix% 正在重置规则为 %difficulty%'
       reset-syntax:
-        - '%prefix% To reset your rules to %difficulty% difficulty, type in the following command:'
+        - '%prefix% 若要重置为 %difficulty% 难度，请输入以下指令：'
         - '%label% rules reset %difficulty% confirm'
       reset-complete:
-        - '%prefix% rules.yml updated successfully'
+        - '%prefix% rules.yml 已成功更新'
       invalid-difficulty:
-        - '%prefix% Invalid difficulty: %difficulty%'
+        - '%prefix% 无效的难度：%difficulty%'
       rule-name-missing:
-        - '%prefix% Must specify a rule name.'
+        - '%prefix% 必须指定规则名称。'
       rule-name-invalid:
-        - '%prefix% No rule was found with name %rulename%'
+        - '%prefix% 未找到名为 %rulename% 的规则'
       showing-rules:
-        - 'Showing all values for rule: &b%rulename%&r'
+        - '显示规则所有值：&b%rulename%&r'
       no-entities-visible:
-        - '%prefix% Must be looking at a nearby entity'
+        - '%prefix% 必须看向附近的实体'
       no-entities-near:
-        - '%prefix% No entities were found within a 10 block radius'
+        - '%prefix% 10格范围内未找到实体'
       effective-rules:
-        - '%prefix% Showing effective rules for: %entitytype% (lvl %level% %mobname%) in %world%, %location%'
+        - '%prefix% 显示有效规则：%entitytype%（等级 %level% %mobname%）于 %world%，%location%'
       no-effective-rules:
-        - '%prefix% No effective rules were found'
+        - '%prefix% 未找到有效规则'
 ```
 
 </details>
 
 <details>
 
-<summary>Click to view a list of all options within Section 8 - System Command Messages</summary>
+<summary>点击查看 Section 8 - 系统指令消息 的所有选项</summary>
 
 ```yaml
 #
 #   ---------------  -  ------------------------------
-#        Section 08  |  System Command Messages
+#        Section 08  |  系统指令消息
 #   ---------------  -  ------------------------------
 #
     reload:
       started:
-        - '%prefix% Reloading configuration files...'
+        - '%prefix% 正在重载配置文件……'
       finished:
-        - '%prefix% Reload complete.'
+        - '%prefix% 重载完成。'
       usage:
-        - '%prefix% Usage: &b/%label% reload'
+        - '%prefix% 用法：&b/%label% reload'
     info:
       about:
         - ' '
         - '&b&lLevelledMobs&b v%version%'
         - '&7&o%description%'
         - ' '
-        - '&7Maintainers: &f%maintainers%'
-        - '&7Contributors: &f%contributors%'
-        - '&7Support for: &fMC &f%supportedVersions%'
+        - '&7维护者：&f%maintainers%'
+        - '&7贡献者：&f%contributors%'
+        - '&7支持：&fMC &f%supportedVersions%'
         - ' '
       listSeparator: '&7, &f'
       usage:
-        - '%prefix% Usage: &b/%label% info'
+        - '%prefix% 用法：&b/%label% info'
     compatibility:
       notice:
-        - '%prefix% Compatibility checks have been printed to your logs. Please check the console :)'
+        - '%prefix% 兼容性检查结果已打印到日志，请检查控制台 :)'
       usage:
-        - '%prefix% Usage: &b/%label% compatibility'
+        - '%prefix% 用法：&b/%label% compatibility'
 ```
 
 </details>
 
 <details>
 
-<summary>Click to view a list of all options within Section 9 - Other Messages</summary>
+<summary>点击查看 Section 9 - 其他消息 的所有选项</summary>
 
 ```yaml
 #
 #
 #   ---------------  -  ------------------------------
-#        Section 09  |  Other Messages
+#        Section 09  |  其他消息
 #   ---------------  -  ------------------------------
 #
 other:
   compatibility-notice:
     enabled: true
     messages:
-      - '%prefix% LevelledMobs compatibility notice:'
-      - '&8 &m->&r &b%incompatibilities% &7possible incompatibilities were found. Please run ''&b/levelledmobs compatibility&7'' to check them.'
-      - '&8 &m->&7 This message is sent as you have the permission &blevelledmobs.compatibility-notice&7. You can disable this message in &bmessages.yml&7.'
-      - '&8 &m->&7 Please ensure you have followed all instructions on the plugin''s Wiki page.'
+      - '%prefix% LevelledMobs 兼容性提示：'
+      - '&8 &m->&r &b%incompatibilities% &7个可能的不兼容项被发现。请运行“&b/levelledmobs compatibility&7”进行检查。'
+      - '&8 &m->&7 此消息因你拥有 &blevelledmobs.compatibility-notice&7 权限而发送。你可以在 &bmessages.yml&7 中关闭此消息。'
+      - '&8 &m->&7 请确保你已按照插件Wiki页面的所有说明操作。'
   update-notice:
     messages:
-      - '&b&nLevelledMobs Update Checker Notice:'
-      - '&7Your &bLevelledMobs&7 version is &boutdated&7! Please update to &bv%latestVersion%&7 as soon as possible. &8(&7You''re running &bv%currentVersion%&8)'
+      - '&b&nLevelledMobs 更新检查提示：'
+      - '&7你的 &bLevelledMobs&7 版本已&boutdated&7！请尽快更新到 &bv%latestVersion%&7。&8(&7你当前运行的是 &bv%currentVersion%&8)'
     send-in-console: true
     send-on-join: true
 
-  mob-head-drop-name: '%mob_name%''s head'
-  no-drop-in-chunk: '%prefix% &7Your levelled mob kill count has reached the maximum for this area. You will no longer receive levelled drops from these mobs. Please come back after a while.'
+  mob-head-drop-name: '%mob_name%的头颅'
+  no-drop-in-chunk: '%prefix% &7你在该区域击杀的等级怪物数量已达上限，将不再获得等级掉落。请稍后再来。'
   create-debug:
-    - '&b&nCreate a Debugging ZIP'
-    - '&7You should only run this command if a LevelledMobs developer has asked you to. It is used to assist users who are experiencing issues with the plugin.'
+    - '&b&n创建调试ZIP'
+    - '&7仅当LevelledMobs开发者要求时才应运行此命令。用于协助遇到插件问题的用户。'
     - ''
-    - '&7This command will generate a ZIP file containing the following required data:'
-    - '&8 &m->&b Plugins list'
-    - '&8 &m->&b Server version'
-    - '&8 &m->&b Current and maximum online player count'
-    - '&8 &m->&b The latest.log file&7 &8(/logs/latest.log)'
+    - '&7此命令将生成包含以下必要数据的ZIP文件：'
+    - '&8 &m->&b 插件列表'
+    - '&8 &m->&b 服务器版本'
+    - '&8 &m->&b 当前及最大在线玩家数'
+    - '&8 &m->&b latest.log 文件&7 &8(/logs/latest.log)'
     - ''
-    - '&7LevelledMobs developers will not redistribute or retain the data beyond the purpose of resolving any issue you may be experiencing. You may also verify the contents prior to sending the file.'
-    - '&7To proceed in creating the ZIP file, please run:'
+    - '&7LevelledMobs开发者不会为除解决问题外的目的分发或保留数据。你可在发送前自行核查内容。'
+    - '&7如需继续创建ZIP文件，请运行：'
     - '&b/lm debug create-zip confirm&7'
 ```
 
@@ -753,4 +742,105 @@ other:
 
 ***
 
-<table><thead><tr><th width="223" align="center">Config Line Option</th><th>Description</th></tr></thead><tbody><tr><td align="center"><code>%prefix%</code></td><td>The prefix LevelledMobs uses before any messages sent via the plugin.</td></tr><tr><td align="center"><code>%player%</code></td><td>The name of the player who the event is directed towards.</td></tr><tr><td align="center"><code>%label%</code></td><td>The main command alias used when running LM's commands.<strong>Example:</strong> <code>/lm</code> or <code>/levelledmobs</code></td></tr><tr><td align="center"><code>%amount%</code></td><td>The input value of the event.</td></tr><tr><td align="center"><code>%entityType%</code></td><td>The <code>EntityType</code> value of the event.</td></tr><tr><td align="center"><code>%level%</code></td><td>The level of the entity from the event being processed.</td></tr><tr><td align="center"><code>%summonType%</code></td><td>The input value of the summon <code>EntityType</code></td></tr><tr><td align="center"><code>%entity%</code></td><td>The nametag, <code>CustomName</code>, or default name value of the entity being processed.</td></tr><tr><td align="center"><code>%x%</code> <code>%y%</code> <code>%z%</code></td><td>These three tags report back the <strong>X</strong>, <strong>Y</strong>, and <strong>Z</strong> coordinates of the event.</td></tr><tr><td align="center"><code>%world%</code></td><td>The value of the world name where the event took place.</td></tr><tr><td align="center"><code>%targetUsername%</code></td><td>The username of the target of the event.</td></tr><tr><td align="center"><code>%targetDisplayname%</code></td><td>The displayname of the target of the event.</td></tr><tr><td align="center"><code>%maxAmount%</code></td><td>Returns the value of the <em><strong>Summon Command Limiter</strong></em> from <code>settings.yml</code>.</td></tr><tr><td align="center"><code>%minLevel%</code> <code>%%maxLevel%</code></td><td>Returns the <code>minLevel</code> and <code>maxLevel</code> value present during the processed event.</td></tr><tr><td align="center"><code>%killed%</code></td><td>Returns the number of entities which were killed during the processed event.</td></tr><tr><td align="center"><code>%skipped%</code></td><td>Returns the number of entities which were skipped during a LM kill event.</td></tr><tr><td align="center"><code>%radius%</code></td><td>The input value of the radius used in LM's summon command.</td></tr><tr><td align="center"><code>%minRadius%</code> <code>%maxRadius%</code></td><td>Returns the minimum and maximum radius value.</td></tr><tr><td align="center"><code>%version%</code></td><td>Returns the current version of LM, formatted <code>LM X.Y.Z b000</code>, where <code>X.Y.Z</code> represents the release version and <code>b000</code> represents the actual build number.</td></tr><tr><td align="center"><code>%description%</code></td><td>Returns the internal LM description text.</td></tr><tr><td align="center"><code>%supportedVersions%</code></td><td>Returns the internal LM supported version text.</td></tr><tr><td align="center"><code>%contributors%</code></td><td>Returns the internal LM contributors list text.</td></tr><tr><td align="center"><code>%incompatibilities%</code></td><td>Returns the internal LM incompatibilities text.</td></tr></tbody></table>
+<table>
+  <thead>
+    <tr>
+      <th width="223" align="center">配置行选项</th>
+      <th>说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center"><code>%prefix%</code></td>
+      <td>LevelledMobs 在插件发送的所有消息前使用的前缀。</td>
+    </tr>
+    <tr>
+      <td align="center"><code>%player%</code></td>
+      <td>事件所针对的玩家名称。</td>
+    </tr>
+    <tr>
+      <td align="center"><code>%label%</code></td>
+      <td>运行 LM 指令时使用的主命令别名。<strong>示例：</strong> <code>/lm</code> 或 <code>/levelledmobs</code></td>
+    </tr>
+    <tr>
+      <td align="center"><code>%amount%</code></td>
+      <td>事件的输入数值。</td>
+    </tr>
+    <tr>
+      <td align="center"><code>%entityType%</code></td>
+      <td>事件中的 <code>EntityType</code> 实体类型值。</td>
+    </tr>
+    <tr>
+      <td align="center"><code>%level%</code></td>
+      <td>事件处理中实体的等级。</td>
+    </tr>
+    <tr>
+      <td align="center"><code>%summonType%</code></td>
+      <td>召唤时输入的 <code>EntityType</code> 类型值。</td>
+    </tr>
+    <tr>
+      <td align="center"><code>%entity%</code></td>
+      <td>被处理实体的名牌、<code>CustomName</code> 或默认名称。</td>
+    </tr>
+    <tr>
+      <td align="center"><code>%x%</code> <code>%y%</code> <code>%z%</code></td>
+      <td>这三个标签分别返回事件发生时的<strong>X</strong>、<strong>Y</strong>、<strong>Z</strong>坐标。</td>
+    </tr>
+    <tr>
+      <td align="center"><code>%world%</code></td>
+      <td>事件发生所在世界的名称。</td>
+    </tr>
+    <tr>
+      <td align="center"><code>%targetUsername%</code></td>
+      <td>事件目标的用户名。</td>
+    </tr>
+    <tr>
+      <td align="center"><code>%targetDisplayname%</code></td>
+      <td>事件目标的显示名称。</td>
+    </tr>
+    <tr>
+      <td align="center"><code>%maxAmount%</code></td>
+      <td>返回 <code>settings.yml</code> 中<strong>召唤指令数量限制</strong>的值。</td>
+    </tr>
+    <tr>
+      <td align="center"><code>%minLevel%</code> <code>%maxLevel%</code></td>
+      <td>返回处理事件时的 <code>minLevel</code> 和 <code>maxLevel</code> 值。</td>
+    </tr>
+    <tr>
+      <td align="center"><code>%killed%</code></td>
+      <td>返回处理事件中被击杀的实体数量。</td>
+    </tr>
+    <tr>
+      <td align="center"><code>%skipped%</code></td>
+      <td>返回 LM 击杀事件中被跳过的实体数量。</td>
+    </tr>
+    <tr>
+      <td align="center"><code>%radius%</code></td>
+      <td>LM 召唤指令中使用的半径输入值。</td>
+    </tr>
+    <tr>
+      <td align="center"><code>%minRadius%</code> <code>%maxRadius%</code></td>
+      <td>返回最小和最大半径值。</td>
+    </tr>
+    <tr>
+      <td align="center"><code>%version%</code></td>
+      <td>返回当前 LM 版本，格式为 <code>LM X.Y.Z b000</code>，其中 <code>X.Y.Z</code> 为发行版本，<code>b000</code> 为构建号。</td>
+    </tr>
+    <tr>
+      <td align="center"><code>%description%</code></td>
+      <td>返回 LM 内部描述文本。</td>
+    </tr>
+    <tr>
+      <td align="center"><code>%supportedVersions%</code></td>
+      <td>返回 LM 支持的版本信息文本。</td>
+    </tr>
+    <tr>
+      <td align="center"><code>%contributors%</code></td>
+      <td>返回 LM 内部贡献者列表文本。</td>
+    </tr>
+    <tr>
+      <td align="center"><code>%incompatibilities%</code></td>
+      <td>返回 LM 内部不兼容项文本。</td>
+    </tr>
+  </tbody>
+</table>
