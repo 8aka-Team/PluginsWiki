@@ -5,6 +5,8 @@
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
 import {themes as prismThemes} from "prism-react-renderer";
+const IS_CHINA_SITE = process.env.CHINA === 'true';
+const ICP_LICENSE = process.env.ICP_LICENSE;
 
 
 /** @type {import('@docusaurus/types').Config} */
@@ -19,6 +21,9 @@ const config = {
         // 开始按钮文字
         start: "快速开始 🥵",
         titleColor: "white",
+        ICP_LICENSE: ICP_LICENSE,
+        // 是否为中国站点
+        IS_CHINA_SITE: IS_CHINA_SITE,
     },
 
     markdown: {
@@ -30,7 +35,8 @@ const config = {
     favicon: 'img/favicon.ico',
 
     // Set the production url of your site here
-    url: 'https://plugins.8aka.org',
+    url: IS_CHINA_SITE ? 'https://plugin.8aka.cn' : 'https://plugin.8aka.org',
+
     // Set the /<baseUrl>/ pathname under which your site is served
     // For GitHub pages deployment, it is often '/<projectName>/'
     baseUrl: '/',
@@ -277,45 +283,45 @@ const config = {
                         position: 'left',
                         items: [
                             {
-                                href: 'https://plugins.8aka.org/intro',
+                                href: config.url + '/intro',
                                 label: '主页',
                             },
                             {
-                                href: 'https://plugins.8aka.org/ShortDoc/intro',
+                                href: config.url + '/ShortDoc/intro',
                                 label: '短文档',
                             },
                             {
                                 label: 'BetterHud',
-                                href: 'https://plugins.8aka.org/BetterHud/intro',
+                                href: config.url + '/BetterHud/intro',
                             },
                             {
                                 label: 'HuskClaims',
-                                href: 'https://plugins.8aka.org/HuskClaims/intro'
+                                href: config.url + '/HuskClaims/intro'
                             },
                             {
                                 label: 'HuskTowns',
-                                href: 'https://plugins.8aka.org/HuskTowns/intro'
+                                href: config.url + '/HuskTowns/intro'
                             },
                             {
                                 label: 'BlueMap',
-                                href: 'https://plugins.8aka.org/BlueMap/intro'
+                                href: config.url + '/BlueMap/intro'
                             },
                             {
                                 label: 'ChestCommands',
-                                href: 'https://plugins.8aka.org/ChestCommands/intro'
+                                href: config.url + '/ChestCommands/intro'
                             },
                             {
                                 label: 'LevelledMobs',
-                                href: 'https://plugins.8aka.org/LevelledMobs/intro'
+                                href: config.url + '/LevelledMobs/intro'
                             }, {
                                 label: 'Sonar',
-                                href: 'https://plugins.8aka.org/Sonar/intro'
+                                href: config.url + '/Sonar/intro'
                             }, {
                                 label: 'WeaponMechanics',
-                                href: 'https://plugins.8aka.org/WeaponMechanics/intro'
+                                href: config.url + '/WeaponMechanics/intro'
                             }, {
                                 label: 'ViaVersion',
-                                href: 'https://plugins.8aka.org/viaversion/intro'
+                                href: config.url + '/viaversion/intro'
                             },
                         ],
                     },
