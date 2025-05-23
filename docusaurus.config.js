@@ -283,45 +283,45 @@ const config = {
                         position: 'left',
                         items: [
                             {
-                                href: config.url + '/intro',
+                                href: '/intro',
                                 label: '主页',
                             },
                             {
-                                href: config.url + '/ShortDoc/intro',
+                                href: '/ShortDoc/intro',
                                 label: '短文档',
                             },
                             {
                                 label: 'BetterHud',
-                                href: config.url + '/BetterHud/intro',
+                                href: '/BetterHud/intro',
                             },
                             {
                                 label: 'HuskClaims',
-                                href: config.url + '/HuskClaims/intro'
+                                href: '/HuskClaims/intro'
                             },
                             {
                                 label: 'HuskTowns',
-                                href: config.url + '/HuskTowns/intro'
+                                href: '/HuskTowns/intro'
                             },
                             {
                                 label: 'BlueMap',
-                                href: config.url + '/BlueMap/intro'
+                                href: '/BlueMap/intro'
                             },
                             {
                                 label: 'ChestCommands',
-                                href: config.url + '/ChestCommands/intro'
+                                href: '/ChestCommands/intro'
                             },
                             {
                                 label: 'LevelledMobs',
-                                href: config.url + '/LevelledMobs/intro'
+                                href: '/LevelledMobs/intro'
                             }, {
                                 label: 'Sonar',
-                                href: config.url + '/Sonar/intro'
+                                href: '/Sonar/intro'
                             }, {
                                 label: 'WeaponMechanics',
-                                href: config.url + '/WeaponMechanics/intro'
+                                href: '/WeaponMechanics/intro'
                             }, {
                                 label: 'ViaVersion',
-                                href: config.url + '/viaversion/intro'
+                                href: '/viaversion/intro'
                             },
                         ],
                     },
